@@ -3,9 +3,8 @@ using UnityEngine.Experimental.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 1.5f; // Karakterin hareket hızı
+    [SerializeField] private float moveSpeed = 1.5f;
 
-    private Animator animator;
     private Rigidbody rb;
 
     Vector3 inputVector;
@@ -13,16 +12,21 @@ public class CharacterMovement : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
 
-        CharacterAnimation();
+
+        //CharacterAnimation();
     }
 
+    private void FixedUpdate()
+    {
+        Move();
+    }
 
     private void Move()
     {
@@ -37,33 +41,40 @@ public class CharacterMovement : MonoBehaviour
         movement = cameraRotation * movement;
 
 
+
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
 
-    }
-    private void flip()
-    {
-
-        //if (inputVector.magnitude > 0 && Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    animator.SetBool("flip", true);
-        //    rb.AddForce(inputVector * Time.fixedDeltaTime);
-        //}
-        //else if (Input.GetKeyUp(KeyCode.Space))
-        //{
-        //    animator.SetBool("flip", false);
-        //}
-    }
-    public void CharacterAnimation()
-    {
         if (inputVector != Vector3.zero)
         {
-            animator.SetBool("walk", true);
+            Quaternion targetRotation = Quaternion.LookRotation(inputVector, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
 
-        else
-        {
-            animator.SetBool("walk", false);
-        }
     }
+    //private void flip()
+    //{
+
+    //    if (inputVector.magnitude > 0 && Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        animator.SetBool("flip", true);
+    //        rb.AddForce(inputVector * Time.fixedDeltaTime);
+    //    }
+    //    else if (Input.GetKeyUp(KeyCode.Space))
+    //    {
+    //        animator.SetBool("flip", false);
+    //    }
+    //}
+    //public void CharacterAnimation()
+    //{
+    //    if (inputVector != Vector3.zero)
+    //    {
+    //        animator.SetBool("walk", true);
+    //    }
+
+    //    else
+    //    {
+    //        animator.SetBool("walk", false);
+    //    }
+    //}
 
 }
