@@ -19,9 +19,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        flip();
-        Move();
 
+        CharacterAnimation();
     }
 
 
@@ -54,4 +53,17 @@ public class CharacterMovement : MonoBehaviour
         //    animator.SetBool("flip", false);
         //}
     }
+    public void CharacterAnimation()
+    {
+        if (inputVector != Vector3.zero)
+        {
+            animator.SetBool("walk", true);
+        }
+
+        else
+        {
+            animator.SetBool("walk", false);
+        }
+    }
+
 }
