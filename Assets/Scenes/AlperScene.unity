@@ -507,6 +507,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1751742864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751742857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d47d9cdd9dbbf449220a3c055d2ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sword: {fileID: 0}
+  cooldownTime: 2
 --- !u!1 &2077680456
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +800,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1751742858}
+    - targetCorrespondingSourceObject: {fileID: 8712367186106612570, guid: e7fd55e3b402a1f4a93b59c5e177a901,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1751742864}
   m_SourcePrefab: {fileID: 100100000, guid: e7fd55e3b402a1f4a93b59c5e177a901, type: 3}
 --- !u!1001 &5725974702071570123
 PrefabInstance:
