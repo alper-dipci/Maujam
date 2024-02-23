@@ -5,6 +5,7 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1.5f;
 
+    private Animator animator;
     private Rigidbody rb;
 
     Vector3 inputVector;
@@ -12,7 +13,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Start()
     {
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -20,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
     {
 
 
-        //CharacterAnimation();
+        CharacterAnimation();
     }
 
     private void FixedUpdate()
@@ -51,30 +52,30 @@ public class CharacterMovement : MonoBehaviour
         }
 
     }
-    //private void flip()
-    //{
+    private void flip()
+    {
 
-    //    if (inputVector.magnitude > 0 && Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        animator.SetBool("flip", true);
-    //        rb.AddForce(inputVector * Time.fixedDeltaTime);
-    //    }
-    //    else if (Input.GetKeyUp(KeyCode.Space))
-    //    {
-    //        animator.SetBool("flip", false);
-    //    }
-    //}
-    //public void CharacterAnimation()
-    //{
-    //    if (inputVector != Vector3.zero)
-    //    {
-    //        animator.SetBool("walk", true);
-    //    }
+        if (inputVector.magnitude > 0 && Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("flip", true);
+            rb.AddForce(inputVector * Time.fixedDeltaTime);
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetBool("flip", false);
+        }
+    }
+    public void CharacterAnimation()
+    {
+        if (inputVector != Vector3.zero)
+        {
+            animator.SetBool("walk", true);
+        }
 
-    //    else
-    //    {
-    //        animator.SetBool("walk", false);
-    //    }
-    //}
+        else
+        {
+            animator.SetBool("walk", false);
+        }
+    }
 
 }
