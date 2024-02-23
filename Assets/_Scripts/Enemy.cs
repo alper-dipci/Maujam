@@ -56,5 +56,20 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
     }
+    public void getHit()
+    {
+        ResetAllTriggers();
+        animator.SetBool("getHit", true);
+    }
+    private void ResetAllTriggers()
+    {
+        foreach (var param in animator.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                animator.ResetTrigger(param.name);
+            }
+        }
+    }
 
 }
