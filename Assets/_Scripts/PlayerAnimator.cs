@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour {
 
     private Animator anim;
-    [SerializeField] private GameObject sword;
     [SerializeField] private float cooldownTime = 2;
     private float nextFireTime = 0;
     public static int noOfClicks = 0;
     float lastClickedTime = 0;
     float maxComboDelay = 1;
+    public float delay1;
+    public float delay2;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -19,17 +20,19 @@ public class PlayerAnimator : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > .7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
         {
+            Debug.Log("a");
             anim.SetBool("hit1", false);
 
         }
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > .7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
         {
             anim.SetBool("hit2", false);
 
         }
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > .7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
         {
             anim.SetBool("hit3", false);
             noOfClicks = 0;
@@ -43,6 +46,7 @@ public class PlayerAnimator : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("leftClick");
                 onAttackClick();
             }
 
@@ -50,7 +54,7 @@ public class PlayerAnimator : MonoBehaviour {
     }
     public void getHit()
     {
-        ResetAllTriggers();
+        //ResetAllTriggers();
         anim.SetBool("getHit", true);
     }
     private void ResetAllTriggers()
@@ -73,12 +77,12 @@ public class PlayerAnimator : MonoBehaviour {
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
-        if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > .7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+        if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
         {
             anim.SetBool("hit1", false);
             anim.SetBool("hit2", true);
         }
-        if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > .7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
+        if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
         {
             anim.SetBool("hit2", false);
             anim.SetBool("hit3", true);

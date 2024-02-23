@@ -261,6 +261,21 @@ MonoBehaviour:
   health: 100
   CMVCam: {fileID: 1285800315}
   shakeMagnitude: 0.7
+--- !u!114 &457861329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457861318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d47d9cdd9dbbf449220a3c055d2ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 2
+  delay1: 0
+  delay2: 0
 --- !u!4 &645713881 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2456369327759828420, guid: 59918db5d34d0cb4bb187e84f3298c3e,
@@ -488,6 +503,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 457861324}
+    - targetCorrespondingSourceObject: {fileID: 2323396081711697796, guid: 5f6d86eb58ae86d46823e3d4ecded7a5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 457861329}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6d86eb58ae86d46823e3d4ecded7a5, type: 3}
 --- !u!1001 &1048925969
 PrefabInstance:
@@ -1200,12 +1219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
-  dodgeCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   dodgeAudio: {fileID: 0}
   dodgeForce: 0
   vcam: {fileID: 0}
