@@ -48,6 +48,21 @@ public class PlayerAnimator : MonoBehaviour {
 
         }
     }
+    public void getHit()
+    {
+        ResetAllTriggers();
+        anim.SetBool("getHit", true);
+    }
+    private void ResetAllTriggers()
+    {
+        foreach (var param in anim.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                anim.ResetTrigger(param.name);
+            }
+        }
+    }
     void onAttackClick()
     {
         lastClickedTime = Time.time;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int health = 100;
+    [SerializeField] private Cinemachine.CinemachineVirtualCamera vcam;
     public void takeDamage(int amount) { 
         health -= amount;
         if (health <= 0)
@@ -14,5 +15,10 @@ public class Player : MonoBehaviour
     {
         Debug.Log("PlayerDEAD");
     }
+    public void shakeCam()
+    {
+
+    }
 
 }
+
