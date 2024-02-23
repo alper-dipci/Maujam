@@ -13,11 +13,9 @@ public class Player : MonoBehaviour
     private float _shakeTimer;
     private float _startingInstentitiy;
 
+    [SerializeField] private float shakeMagnitude;
 
-    private void Awake()
-    {
-        CMVCam = GetComponent<CinemachineVirtualCamera>();
-    }
+
 
 
     public void ShakeCamera(float intensitiy, float timer)
@@ -32,11 +30,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log("shake");
-            ShakeCamera(5f, .1f);
-        }
 
         if (_shakeTimer > 0)
         {
@@ -57,18 +50,10 @@ public class Player : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
-
-
     public void takeDamage(int amount)
     {
         health -= amount;
+        ShakeCamera(shakeMagnitude, .1f);
         if (health <= 0)
             die();
     }

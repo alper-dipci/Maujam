@@ -6,6 +6,7 @@ public class RangedEnemy : Enemy
 {
     [SerializeField] GameObject Arrow;
     [SerializeField] Transform ArrowPosition;
+    private float playerHeight=2f;
 
     public override void hit()
     {
@@ -13,7 +14,7 @@ public class RangedEnemy : Enemy
         canHit = false;
         timer = timeBetweenHits;
         GameObject arrow =  Instantiate(Arrow,ArrowPosition.position,Quaternion.identity);
-        Vector3 lookPos = playerGameobject.transform.position - arrow.transform.position;
+        Vector3 lookPos = playerGameobject.transform.position+Vector3.up* playerHeight - arrow.transform.position;
         arrow.transform.rotation = Quaternion.LookRotation(lookPos);
     }
 }

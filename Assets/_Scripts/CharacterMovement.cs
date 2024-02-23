@@ -1,15 +1,22 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Experimental.AI;
 
-public class CharacterMovement : MonoBehaviour
-{
+public class CharacterMovement : MonoBehaviour {
     [SerializeField] private float moveSpeed = 1.5f;
 
     private Animator animator;
     private Rigidbody rb;
 
-    Vector3 inputVector;
+    bool isDodging;
+    float dodgeTimer, dodge_coolDown;
+    AudioSource audioSource;
+    [SerializeField] AudioClip dodgeAudio;
+    [SerializeField] private float dodgeForce;
 
+    Vector3 inputVector;
+    Vector3 movement;
+    [SerializeField] private Cinemachine.CinemachineVirtualCamera vcam;
 
     void Start()
     {
@@ -19,38 +26,73 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-
+        RecordControls();
 
         CharacterAnimation();
+        if (dodge_coolDown > 0) dodge_coolDown -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (dodge_coolDown > 0) return;
+            if (inputVector.magnitude != 0)
+            {
+                StartCoroutine(Dodge()); //Only if the character is moving, dodging is allowed.
+            }
+
+        }
+    }
+    private IEnumerator  Dodge()
+    {
+        
+        //animator.SetTrigger("Dodge");
+
+        isDodging = true;
+        rb.AddForce(movement.normalized*dodgeForce, ForceMode.Force);
+        Debug.Log(movement.normalized * dodgeForce);
+
+        yield return new WaitForSeconds(.1f);
+
+        isDodging = false;
+
     }
 
-    private void FixedUpdate()
+    void RecordControls()
     {
-        Move();
-    }
 
-    private void Move()
-    {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
 
         inputVector = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-        Vector3 movement = inputVector * moveSpeed;
 
-        Quaternion cameraRotation = Quaternion.Euler(0, -45, 0);
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
+        lookRotation();
+    }
+
+    private void Move()
+    {
+        if (isDodging) return;
+        movement = inputVector * moveSpeed;
+        Quaternion cameraRotation = Quaternion.Euler(0, -33, 0);
         movement = cameraRotation * movement;
-
-
-
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
-
+    }
+    void lookRotation()
+    {
+        float rotspeed;
+        if (isDodging)
+            rotspeed = 3f;
+        else
+            rotspeed = 10f;
         if (inputVector != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(inputVector, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+            Quaternion targetRotation = Quaternion.LookRotation(movement, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotspeed);
         }
-
     }
     private void flip()
     {

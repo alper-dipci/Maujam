@@ -67,7 +67,6 @@ public class Enemy : MonoBehaviour
             {
                 waitForPatrol = false;
                 waitForPatroltimer = timeBetweenPatrols;
-                Debug.Log("settingNewPos");
                 setAgentRandomPatrol();
             }
             
@@ -85,7 +84,6 @@ public class Enemy : MonoBehaviour
         float random = Random.Range(-randomCircleArea, randomCircleArea);
         Mathf.Clamp(Mathf.Abs(random), 2, randomCircleArea);
         patrolPos = new Vector3(startPos.x + random, startPos.y, startPos.z + random);
-        Debug.Log(patrolPos);
         agent.SetDestination(patrolPos);
     }
     public bool isAgentArrived()
