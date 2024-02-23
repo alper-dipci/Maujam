@@ -15,6 +15,5 @@ public class RangedEnemy : Enemy
         GameObject arrow =  Instantiate(Arrow,ArrowPosition.position,Quaternion.identity);
         Vector3 lookPos = playerGameobject.transform.position - arrow.transform.position;
         arrow.transform.rotation = Quaternion.LookRotation(lookPos);
-        Debug.Log("hitRanged");
     }
 }

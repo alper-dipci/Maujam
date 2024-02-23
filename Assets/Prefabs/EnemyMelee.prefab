@@ -124,7 +124,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -146,10 +146,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGameobject: {fileID: 8712367186106612570, guid: e7fd55e3b402a1f4a93b59c5e177a901,
     type: 3}
-  isTriggered: 1
+  isTriggered: 0
   isHitting: 0
   canHit: 0
   timeBetweenHits: 0.5
+  HitRange: 3
+  detectRange: 10
+  unDetectRange: 15
+  randomCircleArea: 10
+  timeBetweenPatrols: 1
   Sword: {fileID: 5675935374411759666}
 --- !u!1 &5675935374411759666
 GameObject:
@@ -217,3 +222,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba58fe305ac5ce4db9e1c1914964627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0

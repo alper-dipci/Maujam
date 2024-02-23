@@ -219,8 +219,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376516762}
-  m_LocalRotation: {x: 0.34004533, y: 0.29048654, z: -0.1113039, w: 0.8874673}
-  m_LocalPosition: {x: -7.09, y: 11.42, z: -9.67}
+  m_LocalRotation: {x: 0.34004536, y: 0.29048654, z: -0.11130393, w: 0.8874673}
+  m_LocalPosition: {x: -7.09, y: 11.42, z: -26.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -590,8 +590,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655397803}
-  m_LocalRotation: {x: 0.34004533, y: 0.29048654, z: -0.1113039, w: 0.8874673}
-  m_LocalPosition: {x: -7.09, y: 11.42, z: -9.67}
+  m_LocalRotation: {x: 0.34004536, y: 0.29048654, z: -0.11130393, w: 0.8874673}
+  m_LocalPosition: {x: -7.09, y: 11.42, z: -26.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -808,7 +808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077680456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.21, z: 0}
+  m_LocalPosition: {x: 0, y: -2.17, z: 0}
   m_LocalScale: {x: 96.17412, y: 1, z: 144.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -828,6 +828,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyMelee
       objectReference: {fileID: 0}
+    - target: {fileID: 2083262823877408406, guid: d639675ddc07dc048aba371ac03dc8a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7556132655907969947, guid: d639675ddc07dc048aba371ac03dc8a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -836,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 7556132655907969947, guid: d639675ddc07dc048aba371ac03dc8a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7.06
       objectReference: {fileID: 0}
     - target: {fileID: 7556132655907969947, guid: d639675ddc07dc048aba371ac03dc8a2,
         type: 3}
@@ -898,6 +903,16 @@ PrefabInstance:
       propertyPath: playerGameobject
       value: 
       objectReference: {fileID: 1751742857}
+    - target: {fileID: 8450043960604011553, guid: d639675ddc07dc048aba371ac03dc8a2,
+        type: 3}
+      propertyPath: randomCircleArea
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450043960604011553, guid: d639675ddc07dc048aba371ac03dc8a2,
+        type: 3}
+      propertyPath: timeBetweenPatrols
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9144486183841383506, guid: d639675ddc07dc048aba371ac03dc8a2,
         type: 3}
       propertyPath: damage
@@ -938,7 +953,7 @@ PrefabInstance:
     - target: {fileID: 4173529066371468025, guid: e7fd55e3b402a1f4a93b59c5e177a901,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -16.56
       objectReference: {fileID: 0}
     - target: {fileID: 4173529066371468025, guid: e7fd55e3b402a1f4a93b59c5e177a901,
         type: 3}
@@ -1071,7 +1086,7 @@ PrefabInstance:
     - target: {fileID: 7496309447526082382, guid: 8649a09cc0737e24a91f8d122e578ae7,
         type: 3}
       propertyPath: isTriggered
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7496309447526082382, guid: 8649a09cc0737e24a91f8d122e578ae7,
         type: 3}
@@ -1083,6 +1098,16 @@ PrefabInstance:
       propertyPath: playerGameobject
       value: 
       objectReference: {fileID: 1751742857}
+    - target: {fileID: 7496309447526082382, guid: 8649a09cc0737e24a91f8d122e578ae7,
+        type: 3}
+      propertyPath: randomCircleArea
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496309447526082382, guid: 8649a09cc0737e24a91f8d122e578ae7,
+        type: 3}
+      propertyPath: timeBetweenPatrols
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

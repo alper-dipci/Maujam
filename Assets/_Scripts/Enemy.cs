@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class Enemy : MonoBehaviour
 {
     [SerializeField] protected GameObject playerGameobject;
@@ -12,8 +13,19 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     private int health;
     [SerializeField]protected bool canHit;
+
     [SerializeField]public float timeBetweenHits;
     protected float timer;
+    [SerializeField] private float HitRange;
+    [SerializeField] private float detectRange;
+    [SerializeField] private float unDetectRange;
+
+    private Vector3 startPos;
+    private Vector3 patrolPos;
+    [SerializeField] private float randomCircleArea=10f;
+    [SerializeField] private float timeBetweenPatrols = 2f;
+    private float waitForPatroltimer;
+    private bool waitForPatrol;
 
     protected virtual void Start()
     {
@@ -21,36 +33,79 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         //animator = GetComponent<Animator>();
         timer = timeBetweenHits;
+        startPos = transform.position;
+        setAgentRandomPatrol();
     }
     public void setEnemyToPlayer() {
         isTriggered = true;
     }
 
+
     void Update()
     {
         timer -= Time.deltaTime;
+        if(waitForPatrol)
+            waitForPatroltimer -= Time.deltaTime;
         if(timer < 0)
             canHit = true;
-        if (isTriggered) { 
+
+        if(Vector3.Distance(playerGameobject.transform.position, transform.position)< detectRange)
+            setEnemyToPlayer();
+        if (Vector3.Distance(playerGameobject.transform.position, transform.position) > unDetectRange)
+            isTriggered = false;
+        if (isTriggered) {
+            LookAtTarget();
+            agent.stoppingDistance = HitRange;
             agent.SetDestination(playerGameobject.transform.position);
-            // Check if we've reached the destination
-            if (!agent.pathPending)
+            if (isAgentArrived()&&canHit)
+                hit();
+        }
+        else if (isAgentArrived())
+        {
+            waitForPatrol = true;
+            if (waitForPatroltimer <= 0)
             {
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                waitForPatrol = false;
+                waitForPatroltimer = timeBetweenPatrols;
+                Debug.Log("settingNewPos");
+                setAgentRandomPatrol();
+            }
+            
+        }
+    }
+    private void LookAtTarget()
+    {
+        Vector3 lookPos = playerGameobject.transform.position - transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.2f);
+    }
+    private  void setAgentRandomPatrol()
+    {       
+        float random = Random.Range(-randomCircleArea, randomCircleArea);
+        Mathf.Clamp(Mathf.Abs(random), 2, randomCircleArea);
+        patrolPos = new Vector3(startPos.x + random, startPos.y, startPos.z + random);
+        Debug.Log(patrolPos);
+        agent.SetDestination(patrolPos);
+    }
+    public bool isAgentArrived()
+    {
+        // Check if we've reached the destination
+        if (!agent.pathPending)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
-                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                    {
-                        //check if can hit
-                        if (canHit)
-                            hit();
-                    }
+                    return true;
                 }
             }
         }
+        return false;
     }
     public virtual void hit()
     {
-        
+        Debug.LogError("hit not implemented");
     }
     public void getHit(int damage)
     {
