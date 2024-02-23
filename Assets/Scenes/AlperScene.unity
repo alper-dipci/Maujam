@@ -217,7 +217,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564586908
 GameObject:
@@ -480,6 +480,33 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2823754598149821718}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1751742858
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751742857}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2077680456
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +611,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &179579081662191206
 PrefabInstance:
@@ -602,7 +629,7 @@ PrefabInstance:
     - target: {fileID: 7556132655907969947, guid: d639675ddc07dc048aba371ac03dc8a2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7556132655907969947, guid: d639675ddc07dc048aba371ac03dc8a2,
         type: 3}
@@ -617,7 +644,7 @@ PrefabInstance:
     - target: {fileID: 7556132655907969947, guid: d639675ddc07dc048aba371ac03dc8a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.25
+      value: 14.08
       objectReference: {fileID: 0}
     - target: {fileID: 7556132655907969947, guid: d639675ddc07dc048aba371ac03dc8a2,
         type: 3}
@@ -754,7 +781,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8712367186106612570, guid: e7fd55e3b402a1f4a93b59c5e177a901,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1751742858}
   m_SourcePrefab: {fileID: 100100000, guid: e7fd55e3b402a1f4a93b59c5e177a901, type: 3}
 --- !u!1001 &5725974702071570123
 PrefabInstance:
@@ -787,7 +818,7 @@ PrefabInstance:
     - target: {fileID: 3631626573681302004, guid: 8649a09cc0737e24a91f8d122e578ae7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.25
+      value: 14.08
       objectReference: {fileID: 0}
     - target: {fileID: 3631626573681302004, guid: 8649a09cc0737e24a91f8d122e578ae7,
         type: 3}
@@ -837,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 7496309447526082382, guid: 8649a09cc0737e24a91f8d122e578ae7,
         type: 3}
       propertyPath: timeBetweenHits
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7496309447526082382, guid: 8649a09cc0737e24a91f8d122e578ae7,
         type: 3}

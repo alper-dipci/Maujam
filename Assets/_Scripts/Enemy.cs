@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private GameObject playerGameobject;
+    [SerializeField] protected GameObject playerGameobject;
     private NavMeshAgent agent;
     public bool isTriggered;
     [SerializeField] protected bool isHitting;
