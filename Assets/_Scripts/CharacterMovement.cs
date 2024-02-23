@@ -3,7 +3,7 @@ using UnityEngine.Experimental.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 1.5f; // Karakterin hareket hızı
+    [SerializeField] private float moveSpeed = 1.5f;
 
     private Animator animator;
     private Rigidbody rb;
@@ -20,9 +20,14 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
 
+
         CharacterAnimation();
     }
 
+    private void FixedUpdate()
+    {
+        Move();
+    }
 
     private void Move()
     {
@@ -37,21 +42,28 @@ public class CharacterMovement : MonoBehaviour
         movement = cameraRotation * movement;
 
 
+
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+
+        if (inputVector != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(inputVector, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        }
 
     }
     private void flip()
     {
 
-        //if (inputVector.magnitude > 0 && Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    animator.SetBool("flip", true);
-        //    rb.AddForce(inputVector * Time.fixedDeltaTime);
-        //}
-        //else if (Input.GetKeyUp(KeyCode.Space))
-        //{
-        //    animator.SetBool("flip", false);
-        //}
+        if (inputVector.magnitude > 0 && Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("flip", true);
+            rb.AddForce(inputVector * Time.fixedDeltaTime);
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetBool("flip", false);
+        }
     }
     public void CharacterAnimation()
     {
