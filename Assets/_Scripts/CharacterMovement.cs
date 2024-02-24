@@ -11,13 +11,15 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody rb;
 
     bool isDodging;
-    float dodgeTimer, dodge_coolDown;
+    [SerializeField] float dodge_coolDown;
+    [SerializeField] float dodgeTimer;
     AudioSource audioSource;
     [SerializeField] AudioClip dodgeAudio;
     [SerializeField] private float dodgeForce;
 
     Vector3 inputVector;
     public Vector3 movement;
+    private bool canRope;
     public bool onRope;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera vcam;
 
@@ -30,19 +32,24 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         RecordControls();
-
-        CharacterAnimation();
-        if (dodge_coolDown > 0) dodge_coolDown -= Time.deltaTime;
+        if (dodgeTimer >= 0) dodgeTimer -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (dodge_coolDown > 0) return;
-            if (inputVector.magnitude != 0)
+            if (dodgeTimer > 0) return;
+            if (inputVector.magnitude != 0 && dodgeTimer<=0)
             {
+                Debug.Log("dodge");
+                dodgeTimer += dodge_coolDown;
                 StartCoroutine(Dodge()); //Only if the character is moving, dodging is allowed.
             }
-
         }
+        if (Input.GetKeyDown(KeyCode.E) && canRope)
+        {
+            onRope = !onRope;
+            
+        }
+            
     }
     private IEnumerator Dodge()
     {
@@ -51,7 +58,7 @@ public class CharacterMovement : MonoBehaviour
         isDodging = true;
         dodgeTimer = .8f;
         transform.DOMove(transform.position + movement.normalized * dodgeForce, dodgeTimer);
-        yield return new WaitForSeconds(dodgeTimer);
+        yield return new WaitForSeconds(dodgeTimer-.1f);
         isDodging = false;
 
 
@@ -61,17 +68,24 @@ public class CharacterMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("rope"))
         {
-            onRope = true;
+            Vector3 direction = other.gameObject.transform.position - transform.position ;
+            direction.y = 0;
+            transform.rotation = Quaternion.LookRotation(direction);
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            canRope = true;
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("rope"))
         {
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            canRope = false;
             onRope = false;
         }
     }
+
+
 
 
     void RecordControls()
@@ -89,7 +103,6 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
-
             animator.SetBool("climb", false);
         }
 
@@ -107,7 +120,10 @@ public class CharacterMovement : MonoBehaviour
         movement = inputVector * moveSpeed;
         Quaternion cameraRotation = Quaternion.Euler(0, -33, 0);
         movement = cameraRotation * movement;
-        rb.velocity = movement;
+        if (!onRope)
+            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        else
+            rb.velocity = movement;
     }
     void lookRotation()
     {
@@ -124,17 +140,6 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public void CharacterAnimation()
-    {
-        if (inputVector != Vector3.zero)
-        {
-            animator.SetBool("walk", true);
-        }
 
-        else
-        {
-            animator.SetBool("walk", false);
-        }
-    }
 
 }

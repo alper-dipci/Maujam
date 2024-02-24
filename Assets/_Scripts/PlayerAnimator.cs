@@ -27,7 +27,7 @@ public class PlayerAnimator : MonoBehaviour {
         if (Time.time - lastClickedTime > maxComboDelay)
         {
             currentStateCount = 0;
-            anim.SetLayerWeight(0, 0);
+            anim.SetLayerWeight(1, 0);
             swordTrail.enabled = false;
             swordCollider.enabled = false;
         }
