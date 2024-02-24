@@ -9,10 +9,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected GameObject playerGameobject;
     private NavMeshAgent agent;
     public bool isTriggered;
-    [SerializeField] protected bool isHitting;
-    private Animator animator;
+    protected bool isHitting;
+    [SerializeField] public Animator animator;
     [SerializeField]private int health;
-    [SerializeField]protected bool canHit;
+    protected bool canHit;
 
     [SerializeField]public float timeBetweenHits;
     protected float timer;
@@ -31,9 +31,9 @@ public class Enemy : MonoBehaviour
     {
         playerGameobject = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
-        //animator = GetComponent<Animator>();
         timer = timeBetweenHits;
         startPos = transform.position;
+        animator.SetBool("isWalk", true);
         setAgentRandomPatrol();
     }
     public void setEnemyToPlayer() {
@@ -63,8 +63,10 @@ public class Enemy : MonoBehaviour
         else if (isAgentArrived())
         {
             waitForPatrol = true;
+            animator.SetBool("isWalk", false);
             if (waitForPatroltimer <= 0)
             {
+                animator.SetBool("isWalk", true);
                 waitForPatrol = false;
                 waitForPatroltimer = timeBetweenPatrols;
                 setAgentRandomPatrol();
@@ -110,13 +112,13 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         if (health < 0) die();
-        //ResetAllTriggers();
-        //animator.SetBool("getHit", true);
+        ResetAllTriggers();
+        animator.SetTrigger("getHit");
     }
     void die()
     {
-        //Instantiate()
-        Destroy(gameObject);
+        animator.SetTrigger("death");
+        Destroy(gameObject,1f);
     }
     private void ResetAllTriggers()
     {

@@ -6,6 +6,7 @@ public class MeleeEnemy : Enemy
 {
     [SerializeField] GameObject Sword;
     private Collider swordCollider;
+    public float animtime;
     protected override void Start()
     {
         base.Start();
@@ -17,11 +18,17 @@ public class MeleeEnemy : Enemy
         isHitting = true;
         canHit = false;
         timer = timeBetweenHits;
-        //animator.SetTrigger("hit");
+        animator.SetLayerWeight(1, 1);
+        animator.SetTrigger("hit");       
+        animator.SetBool("isWalk",false);
         swordCollider.enabled=true;
+        StartCoroutine(onAnimatonEnd());
     }
-    public void onAnimatonEnd()
+    public IEnumerator onAnimatonEnd()
     {
+        yield return new WaitForSeconds(animtime);
+        animator.SetBool("isWalk", true);
+        animator.SetLayerWeight(1, 0);
         swordCollider.enabled = false;
     }
 }
