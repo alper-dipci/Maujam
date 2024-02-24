@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 
-public class CharacterMovement : MonoBehaviour {
+public class CharacterMovement : MonoBehaviour
+{
     [SerializeField] private float moveSpeed = 1.5f;
 
     private Animator animator;
@@ -41,13 +42,13 @@ public class CharacterMovement : MonoBehaviour {
 
         }
     }
-    private IEnumerator  Dodge()
+    private IEnumerator Dodge()
     {
-        
+
         //animator.SetTrigger("Dodge");
 
         isDodging = true;
-        rb.AddForce(movement.normalized*dodgeForce, ForceMode.Force);
+        rb.AddForce(movement.normalized * dodgeForce, ForceMode.Force);
         Debug.Log(movement.normalized * dodgeForce);
 
         yield return new WaitForSeconds(.1f);

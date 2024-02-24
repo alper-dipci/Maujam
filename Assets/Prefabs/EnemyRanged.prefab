@@ -30,13 +30,13 @@ Transform:
   m_GameObject: {fileID: 3520839030715559289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 8.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.94, y: 1.94, z: 1.94}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4887593805949102444}
   - {fileID: 821499508106334373}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8502344359033505677
 MeshFilter:
@@ -145,8 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b48a5c23b683bc429316c7ba103906b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGameobject: {fileID: 8712367186106612570, guid: e7fd55e3b402a1f4a93b59c5e177a901,
-    type: 3}
+  playerGameobject: {fileID: 0}
   isTriggered: 0
   isHitting: 0
   canHit: 0
@@ -154,8 +153,8 @@ MonoBehaviour:
   HitRange: 8
   detectRange: 10
   unDetectRange: 15
-  randomCircleArea: 10
-  timeBetweenPatrols: 1
+  randomCircleArea: 6
+  timeBetweenPatrols: 2
   Arrow: {fileID: 7977782101696282858, guid: ea383121a1c61e546a866f949b79d7ca, type: 3}
   ArrowPosition: {fileID: 4887593805949102444}
 --- !u!1 &7664308026126194658

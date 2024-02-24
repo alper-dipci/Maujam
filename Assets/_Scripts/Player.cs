@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using Unity.Mathematics;
+using Unity.VisualScripting;
+using Unity.Burst.CompilerServices;
 
 public class Player : MonoBehaviour
 {
@@ -37,7 +39,20 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
+            RaycastHit _hit;
 
+            if (Physics.Raycast(ray, out _hit))
+            {
+                if (_hit.collider.TryGetComponent(out IInteractable interactObject))
+                {
+                    interactObject.Interact();
+                }
+
+            }
+        }
 
         if (_shakeTimer > 0)
         {
@@ -63,8 +78,8 @@ public class Player : MonoBehaviour
         playerAnimator.getHit();
         health -= amount;
         ShakeCamera(shakeMagnitude, .1f);
-        Collider[] enemys = Physics.OverlapSphere(transform.position,12f,EnemyLayerMask);
-        foreach(Collider col in enemys)
+        Collider[] enemys = Physics.OverlapSphere(transform.position, 12f, EnemyLayerMask);
+        foreach (Collider col in enemys)
         {
             if (Vector3.Distance(col.transform.position, transform.position) < closestEnemy.magnitude)
             {
@@ -87,6 +102,8 @@ public class Player : MonoBehaviour
     private void die()
     {
     }
+
+
 
 }
 
