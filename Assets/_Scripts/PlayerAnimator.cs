@@ -11,6 +11,7 @@ public class PlayerAnimator : MonoBehaviour {
     float maxComboDelay = 2;
     public float delay1;
     private Rigidbody rb;
+    [SerializeField] TrailRenderer swordTrail;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,11 +27,13 @@ public class PlayerAnimator : MonoBehaviour {
         {
             currentStateCount = 0;
             anim.SetLayerWeight(0, 0);
+            swordTrail.enabled = false;
         }
 
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetLayerWeight(1, 1);
+            swordTrail.enabled = true;
             onAttackClick();
         }
 

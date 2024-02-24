@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
+using DG.Tweening;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -37,18 +38,20 @@ public class CharacterMovement : MonoBehaviour
             if (dodge_coolDown > 0) return;
             if (inputVector.magnitude != 0)
             {
-                Dodge(); //Only if the character is moving, dodging is allowed.
+                StartCoroutine(Dodge()); //Only if the character is moving, dodging is allowed.
             }
 
         }
     }
-    private void Dodge()
+    private IEnumerator  Dodge()
     {
 
         animator.SetTrigger("Dodge");
-
-        rb.AddForce(movement.normalized * dodgeForce, ForceMode.Impulse);
-        Debug.Log(movement.normalized * dodgeForce);
+        isDodging = true;
+        dodgeTimer = .8f;
+        transform.DOMove(transform.position +movement.normalized * dodgeForce, dodgeTimer);
+        yield return new WaitForSeconds(dodgeTimer);
+        isDodging = false;
 
 
     }
