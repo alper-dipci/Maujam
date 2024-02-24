@@ -12,6 +12,7 @@ public class Sword : MonoBehaviour
         {
             Player player = other.GetComponent<Player>();
             player.takeDamage(damage);
+            Debug.Log("hit PLayer");
             //instantiate VFX
         }
 

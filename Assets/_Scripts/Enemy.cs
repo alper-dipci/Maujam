@@ -59,6 +59,12 @@ public class Enemy : MonoBehaviour
             agent.SetDestination(playerGameobject.transform.position);
             if (isAgentArrived()&&canHit)
                 hit();
+            else if (!isAgentArrived())
+            {
+                animator.SetBool("isWalk", true);
+                animator.SetLayerWeight(1, 0);
+            }
+                
         }
         else if (isAgentArrived())
         {
