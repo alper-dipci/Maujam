@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerAnimator : MonoBehaviour {
+public class PlayerAnimator : MonoBehaviour
+{
 
     private Animator anim;
     public int noOfClicks = 0;
@@ -40,6 +42,21 @@ public class PlayerAnimator : MonoBehaviour {
             onAttackClick();
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
     public void getHit()
     {
@@ -58,8 +75,8 @@ public class PlayerAnimator : MonoBehaviour {
     }
     void onAttackClick()
     {
-        if (Time.time- lastClickedTime < delay1) return;
-        
+        if (Time.time - lastClickedTime < delay1) return;
+
         lastClickedTime = Time.time;
         if (currentStateCount >= 2)
             currentStateCount = 0;
@@ -76,7 +93,7 @@ public class PlayerAnimator : MonoBehaviour {
         //if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
         //{
         //    Debug.Log("set2treue");
-        //    anim.SetBool("hit1", false);
+        //    anim.SetBool(""", false);
         //    anim.SetBool("hit2", true);
         //}
         //if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))

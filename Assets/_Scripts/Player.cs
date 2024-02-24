@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float shakeMagnitude;
     PlayerAnimator playerAnimator;
 
+
+    public bool _skill1, _skill2, _skill3
+    = false;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+
         closestEnemy = Vector3.one * 100;
         playerAnimator = GetComponent<PlayerAnimator>();
     }
@@ -76,12 +81,40 @@ public class Player : MonoBehaviour
                 if (hit.collider.TryGetComponent(out IInteractable interactObject))
                 {
                     interactObject.Interact();
+
+                    if (hit.collider.TryGetComponent(out EnumSkills _skil))
+                    {
+                        Skills skillType = _skil.skil;
+
+                        // Hangi yetenek olduğunu kontrol edebilirsiniz
+                        switch (skillType)
+                        {
+                            case Skills.skill1:
+
+                                _skill1 = true;
+                                break;
+                            case Skills.skill2:
+
+                                _skill2 = true;
+                                break;
+                            case Skills.skill3:
+
+                                _skill3 = true;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
                 }
 
 
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red, 1f);
             }
+
+
         }
+
 
 
         if (_shakeTimer > 0)
@@ -114,6 +147,7 @@ public class Player : MonoBehaviour
         {
             if (Vector3.Distance(col.transform.position, transform.position) < closestEnemy.magnitude)
             {
+
                 closestEnemy = col.transform.position;
             }
         }

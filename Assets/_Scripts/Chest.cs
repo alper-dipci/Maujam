@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour, IInteractable
 {
+ 
+
     [SerializeField] GameObject _chestKapak;
     [SerializeField] ParticleSystem _chestParticle;
 
