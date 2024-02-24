@@ -15,9 +15,7 @@ public class Chest : MonoBehaviour, IInteractable
     public void OpenChestKapak()
     {
         _chestKapak.transform.DORotate(new Vector3(_chestKapak.transform.rotation.x, _chestKapak.transform.rotation.y, 45), .2f);
-      
-    }
 
- 
+    }
 
 }

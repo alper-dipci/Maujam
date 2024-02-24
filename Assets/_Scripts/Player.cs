@@ -22,20 +22,20 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float shakeMagnitude;
     PlayerAnimator playerAnimator;
- 
-private void Awake() 
-{ 
-    // If there is an instance, and it's not me, delete myself.
 
-    if (Instance != null && Instance != this) 
-    { 
-        Destroy(this); 
-    } 
-    else 
-    { 
-        Instance = this; 
-    } 
-}
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -56,7 +56,7 @@ private void Awake()
     private void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Transform characterTransform = transform;
 
@@ -70,7 +70,7 @@ private void Awake()
 
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 2f))
+            if (Physics.Raycast(ray, out hit, 3f))
             {
 
                 if (hit.collider.TryGetComponent(out IInteractable interactObject))
