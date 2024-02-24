@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: "C\u0131m"
-    second: {fileID: 2100000, guid: 39c63e3b853980647aafafbd330599f3, type: 2}
+    second: {fileID: 2100000, guid: 75db462f76e1640438378a32757f2863, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Deniz
-    second: {fileID: 2100000, guid: 8ad0726e6663b2f4687d81d53776c79f, type: 2}
+    second: {fileID: 2100000, guid: 450a41ea8d9d8ee4b93454a3a4f8a326, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tas
-    second: {fileID: 2100000, guid: 2d658c04aa6513e48a265805b9878876, type: 2}
+    second: {fileID: 2100000, guid: 81e1b335484a7f949a1b01950cd29642, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Toprak
-    second: {fileID: 2100000, guid: be6c17531cf4d4a43a84cf1b40653dad, type: 2}
+    second: {fileID: 2100000, guid: 2a620509060efb14d86e64c51dad1b7d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: brick
-    second: {fileID: 2100000, guid: fc0dd0320e44ac946a73094d7628859f, type: 2}
+    second: {fileID: 2100000, guid: 4ba82fbb769294741bcd74861e459d9e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
