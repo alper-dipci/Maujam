@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public bool isTriggered;
     [SerializeField] protected bool isHitting;
     private Animator animator;
-    private int health;
+    [SerializeField]private int health;
     [SerializeField]protected bool canHit;
 
     [SerializeField]public float timeBetweenHits;
@@ -105,14 +105,18 @@ public class Enemy : MonoBehaviour
     {
         Debug.LogError("hit not implemented");
     }
+
     public void getHit(int damage)
     {
         health -= damage;
+        if (health < 0) die();
+        //ResetAllTriggers();
+        //animator.SetBool("getHit", true);
     }
-    public void getHit()
+    void die()
     {
-        ResetAllTriggers();
-        animator.SetBool("getHit", true);
+        //Instantiate()
+        Destroy(gameObject);
     }
     private void ResetAllTriggers()
     {
