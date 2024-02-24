@@ -26,7 +26,7 @@ public class Bird : MonoBehaviour, IInteractable
         });
         _animator.SetBool("flying", true);
 
-
+        AudioSourceManager.Instance._sounds[6].Play();
 
     }
 }

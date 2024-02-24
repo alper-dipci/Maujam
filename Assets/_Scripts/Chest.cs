@@ -18,7 +18,7 @@ public class Chest : MonoBehaviour, IInteractable
     {
         _chestKapak.transform.DORotate(new Vector3(-90f, 90, -90), 2f);
         _chestParticle.Play();
-        
+        AudioSourceManager.Instance._sounds[5].Play();
 
     }
 
