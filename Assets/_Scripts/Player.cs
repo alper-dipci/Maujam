@@ -114,7 +114,6 @@ public class Player : MonoBehaviour
         {
             if (Vector3.Distance(col.transform.position, transform.position) < closestEnemy.magnitude)
             {
-                Debug.Log("cchangesd");
                 closestEnemy = col.transform.position;
             }
         }

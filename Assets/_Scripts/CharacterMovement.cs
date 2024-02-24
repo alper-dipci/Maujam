@@ -16,6 +16,8 @@ public class CharacterMovement : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] AudioClip dodgeAudio;
     [SerializeField] private float dodgeForce;
+    [SerializeField] private ParticleSystem dust;
+    private bool isDustPlaying;
 
     Vector3 inputVector;
     public Vector3 movement;
@@ -25,12 +27,27 @@ public class CharacterMovement : MonoBehaviour
 
     void Start()
     {
+        isDustPlaying = false;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
+        if (inputVector.magnitude > 0 && !isDustPlaying)
+        {
+            dust.Play();
+            isDustPlaying = true;
+            Debug.Log("play");
+        }    
+        else if(inputVector.magnitude == 0 && isDustPlaying)
+        {
+            isDustPlaying = false;
+            dust.Stop();
+            Debug.Log("stop");
+        }
+            
+            
         RecordControls();
         if (dodgeTimer >= 0) dodgeTimer -= Time.deltaTime;
 
@@ -85,6 +102,7 @@ public class CharacterMovement : MonoBehaviour
             onRope = false;
         }
     }
+    
 
 
 
