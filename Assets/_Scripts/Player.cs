@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
                 closestEnemy = col.transform.position;
             }
         }
-        Instantiate(deneme, closestEnemy, Quaternion.identity);
+        //Instantiate(deneme, closestEnemy, Quaternion.identity);
         Vector3 direction = closestEnemy - transform.position;
         direction.y = 0;
         transform.rotation = Quaternion.LookRotation(direction);
