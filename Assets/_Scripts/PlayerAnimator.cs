@@ -7,9 +7,10 @@ public class PlayerAnimator : MonoBehaviour {
     private Animator anim;
     [SerializeField] private float cooldownTime = 2;
     private float nextFireTime = 0;
-    public static int noOfClicks = 0;
+    public int noOfClicks = 0;
+    public int currentStateCount;
     float lastClickedTime = 0;
-    float maxComboDelay = 1;
+    float maxComboDelay = 2;
     public float delay1;
     public float delay2;
     void Start()
@@ -21,41 +22,39 @@ public class PlayerAnimator : MonoBehaviour {
     void Update()
     {
 
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
-        {
-            Debug.Log("a");
-            anim.SetBool("hit1", false);
+        //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+        //{
+        //    anim.SetBool("hit1", false);
 
-        }
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
-        {
-            anim.SetBool("hit2", false);
+        //}
+        //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
+        //{
+        //    anim.SetBool("hit2", false);
 
-        }
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
-        {
-            anim.SetBool("hit3", false);
-            noOfClicks = 0;
-        }
+        //}
+        //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
+        //{
+        //    anim.SetBool("hit3", false);
+        //    noOfClicks = 0;
+        //}
 
         if (Time.time - lastClickedTime > maxComboDelay)
         {
-            noOfClicks = 0;
+            currentStateCount = 0;
+            anim.SetLayerWeight(0, 0);
         }
-        if (Time.time > nextFireTime)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("leftClick");
-                onAttackClick();
-            }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetLayerWeight(1, 1);
+            onAttackClick();
         }
+
     }
     public void getHit()
     {
-        //ResetAllTriggers();
-        anim.SetBool("getHit", true);
+        ResetAllTriggers();
+        anim.SetTrigger("getHit");
     }
     private void ResetAllTriggers()
     {
@@ -69,23 +68,32 @@ public class PlayerAnimator : MonoBehaviour {
     }
     void onAttackClick()
     {
+        if (Time.time- lastClickedTime < delay1) return;
+        
         lastClickedTime = Time.time;
-        noOfClicks++;
-        if (noOfClicks >= 1)
-        {
-            anim.SetBool("hit1", true);
-        }
-        noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
+        if (currentStateCount >= 3)
+            currentStateCount = 0;
+        currentStateCount++;
+        anim.SetTrigger("hit" + currentStateCount);
+        //noOfClicks++;
+        //if (noOfClicks >= 1)
+        //{
+        //    Debug.Log("set1treue");
+        //    anim.SetBool("hit1", true);
+        //}
+        //noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
-        if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
-        {
-            anim.SetBool("hit1", false);
-            anim.SetBool("hit2", true);
-        }
-        if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
-        {
-            anim.SetBool("hit2", false);
-            anim.SetBool("hit3", true);
-        }
+        //if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+        //{
+        //    Debug.Log("set2treue");
+        //    anim.SetBool("hit1", false);
+        //    anim.SetBool("hit2", true);
+        //}
+        //if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
+        //{
+        //    Debug.Log("set3treue");
+        //    anim.SetBool("hit2", false);
+        //    anim.SetBool("hit3", true);
+        //}
     }
 }

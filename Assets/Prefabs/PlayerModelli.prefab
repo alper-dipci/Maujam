@@ -366,6 +366,9 @@ GameObject:
   - component: {fileID: 3969778392890591424}
   - component: {fileID: 5792846460702078294}
   - component: {fileID: 5792722303331319832}
+  - component: {fileID: 8812386851055327562}
+  - component: {fileID: 1133064510047646699}
+  - component: {fileID: 687493290930424947}
   m_Layer: 0
   m_Name: PlayerModelli
   m_TagString: Player
@@ -388,7 +391,7 @@ Transform:
   - {fileID: 2474280222901093279}
   - {fileID: 596221988545417908}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2569434304833272022
 Animator:
@@ -475,8 +478,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   dodgeAudio: {fileID: 0}
-  dodgeForce: 0
+  dodgeForce: 10
   vcam: {fileID: 0}
+--- !u!114 &8812386851055327562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323396081711697796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96017d8fea8491489fbb9d55d95c9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  CMVCam: {fileID: 0}
+  shakeMagnitude: 0.7
+--- !u!114 &1133064510047646699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323396081711697796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d47d9cdd9dbbf449220a3c055d2ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 2
+  noOfClicks: 0
+  currentStateCount: 0
+  delay1: 0.5
+  delay2: 0.6
+--- !u!114 &687493290930424947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323396081711697796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2fcddb1b298f744fb52c30b0ddb1050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hit1VFX: {fileID: 1737036121482468, guid: 6c3372b1be39690469c1358cce9a28b6, type: 3}
+  transformHit: {fileID: 0}
 --- !u!1 &2418237535000192660
 GameObject:
   m_ObjectHideFlags: 0

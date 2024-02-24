@@ -14,9 +14,12 @@ public class Player : MonoBehaviour
     private float _startingInstentitiy;
 
     [SerializeField] private float shakeMagnitude;
+    PlayerAnimator playerAnimator;
 
-
-
+    private void Start()
+    {
+        playerAnimator = GetComponent<PlayerAnimator>();
+    }
 
     public void ShakeCamera(float intensitiy, float timer)
     {
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour
 
     public void takeDamage(int amount)
     {
+        playerAnimator.getHit();
         health -= amount;
         ShakeCamera(shakeMagnitude, .1f);
         if (health <= 0)
@@ -61,7 +65,6 @@ public class Player : MonoBehaviour
     {
         Debug.Log("PlayerDEAD");
     }
-
 
 }
 
