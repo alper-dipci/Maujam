@@ -8,27 +8,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Chest
-    second: {fileID: 2100000, guid: 7f85a05c42b203246977797632250539, type: 2}
+    second: {fileID: 2100000, guid: e4785a46478d4f14da93006a8d30ae5a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Chest Shade
-    second: {fileID: 2100000, guid: b559e44c4de415d43ac16c8bf1b4d5a4, type: 2}
+    second: {fileID: 2100000, guid: b36df2a1018c75645b1d31e29aec5531, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Gold
-    second: {fileID: 2100000, guid: c2e33c66c8600b34099188a09aba4242, type: 2}
+    second: {fileID: 2100000, guid: 87baace1ba0b1b54f88bc7ab59a0c83d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Silver
-    second: {fileID: 2100000, guid: efafc0a6496a1514e9382131a93e8a24, type: 2}
+    second: {fileID: 2100000, guid: bfbdcfb65620e8945bae6e4954eac4a5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: SilverShade
-    second: {fileID: 2100000, guid: 501e073c6f4c66b4286646bb0e3e15f7, type: 2}
+    second: {fileID: 2100000, guid: 01cc93fd11fa25d408fbabee358f1bff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Snow
+    second: {fileID: 2100000, guid: edf7d6b41bde81c4b9aa11a89ac62777, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
