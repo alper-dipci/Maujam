@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4851406474232137424}
   - component: {fileID: 2888825044626468350}
   - component: {fileID: 8450043960604011553}
+  - component: {fileID: 6439788909180608040}
   m_Layer: 7
   m_Name: EnemyMelee
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2241795639129033916}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4851406474232137424
 CapsuleCollider:
@@ -92,18 +93,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19fad2393d54d8449e17e346b428390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGameobject: {fileID: 0}
+  playerGameobject: {fileID: 1465822641125201414}
   isTriggered: 0
-  animator: {fileID: 0}
-  health: 0
+  animator: {fileID: 6439788909180608040}
+  health: 100
   timeBetweenHits: 1
-  HitRange: 3
+  HitRange: 4
   detectRange: 10
   unDetectRange: 15
   randomCircleArea: 6
   timeBetweenPatrols: 2
   Sword: {fileID: 4077044353130150657}
-  animtime: 3
+  animtime: 0.6
+--- !u!95 &6439788909180608040
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083262823877408406}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 649f917ba1815d344b8398c51774f758, type: 3}
+  m_Controller: {fileID: 9100000, guid: d5f3f9b561cb51f4486ac2d5f456fd5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1771828065378446167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,6 +224,12 @@ PrefabInstance:
       addedObject: {fileID: 3737779403785363899}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b0f5ed9af5be2b40ac336cea16bdf34, type: 3}
+--- !u!1 &1465822641125201414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b0f5ed9af5be2b40ac336cea16bdf34,
+    type: 3}
+  m_PrefabInstance: {fileID: 1771828065378446167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2241795639129033916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9b0f5ed9af5be2b40ac336cea16bdf34,
@@ -350,9 +378,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.0078941295, y: 0.010182028, z: 0.03482119}
-  m_Center: {x: -0.0008327591, y: 0.0022197955, z: 0.01174147}
+  m_Size: {x: 0.02031274, y: 0.021653688, z: 0.038826257}
+  m_Center: {x: 0.0006210109, y: 0.0002924388, z: 0.0137440525}

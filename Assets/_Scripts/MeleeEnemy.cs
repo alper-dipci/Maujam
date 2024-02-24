@@ -27,8 +27,6 @@ public class MeleeEnemy : Enemy
     public IEnumerator onAnimatonEnd()
     {
         yield return new WaitForSeconds(animtime);
-        animator.SetBool("isWalk", true);
-        animator.SetLayerWeight(1, 0);
         swordCollider.enabled = false;
     }
 }
