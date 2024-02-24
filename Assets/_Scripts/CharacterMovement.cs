@@ -37,23 +37,19 @@ public class CharacterMovement : MonoBehaviour
             if (dodge_coolDown > 0) return;
             if (inputVector.magnitude != 0)
             {
-                StartCoroutine(Dodge()); //Only if the character is moving, dodging is allowed.
+                Dodge(); //Only if the character is moving, dodging is allowed.
             }
 
         }
     }
-    private IEnumerator Dodge()
+    private void Dodge()
     {
 
-        //animator.SetTrigger("Dodge");
+        animator.SetTrigger("Dodge");
 
-        isDodging = true;
-        rb.AddForce(movement.normalized * dodgeForce, ForceMode.Force);
+        rb.AddForce(movement.normalized * dodgeForce, ForceMode.Impulse);
         Debug.Log(movement.normalized * dodgeForce);
 
-        yield return new WaitForSeconds(.1f);
-
-        isDodging = false;
 
     }
 
