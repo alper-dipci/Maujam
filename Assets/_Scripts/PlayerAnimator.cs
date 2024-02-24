@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using System;
 
 public class PlayerAnimator : MonoBehaviour {
 
@@ -13,6 +15,7 @@ public class PlayerAnimator : MonoBehaviour {
     private Rigidbody rb;
     [SerializeField] BoxCollider swordCollider;
     [SerializeField] TrailRenderer swordTrail;
+    [SerializeField] ParticleSystem skill1;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -39,8 +42,25 @@ public class PlayerAnimator : MonoBehaviour {
             swordCollider.enabled = true;
             onAttackClick();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("skil1");
+            anim.SetLayerWeight(1, 1);
+            swordTrail.enabled = true;
+            swordCollider.enabled = true;
+            lastClickedTime = Time.time;
+            anim.SetTrigger("skill1");
+            skill1.Play();
+            transform.DORotate(Vector3.up * 720, 1f, RotateMode.FastBeyond360);
+        }
 
     }
+
+    private object stopVFX()
+    {
+        throw new NotImplementedException();
+    }
+
     public void getHit()
     {
         ResetAllTriggers();
@@ -65,25 +85,5 @@ public class PlayerAnimator : MonoBehaviour {
             currentStateCount = 0;
         currentStateCount++;
         anim.SetTrigger("hit" + currentStateCount);
-        //noOfClicks++;
-        //if (noOfClicks >= 1)
-        //{
-        //    Debug.Log("set1treue");
-        //    anim.SetBool("hit1", true);
-        //}
-        //noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
-
-        //if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
-        //{
-        //    Debug.Log("set2treue");
-        //    anim.SetBool("hit1", false);
-        //    anim.SetBool("hit2", true);
-        //}
-        //if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
-        //{
-        //    Debug.Log("set3treue");
-        //    anim.SetBool("hit2", false);
-        //    anim.SetBool("hit3", true);
-        //}
     }
 }
