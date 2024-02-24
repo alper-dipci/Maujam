@@ -125,10 +125,6 @@ public class Player : MonoBehaviour
         if (health <= 0)
             die();
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawCube(closestEnemy, Vector3.one);
-    }
     private void die()
     {
     }
