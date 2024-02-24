@@ -18,6 +18,7 @@ public class CharacterMovement : MonoBehaviour
 
     Vector3 inputVector;
     public Vector3 movement;
+    public bool onRope;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera vcam;
 
     void Start()
@@ -64,7 +65,11 @@ public class CharacterMovement : MonoBehaviour
 
 
         inputVector = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-
+        if (onRope)
+        {
+            animator.SetTrigger("rope");
+            inputVector = new Vector3(0, verticalInput, 0).normalized;
+        }
     }
 
     private void FixedUpdate()
@@ -83,9 +88,10 @@ public class CharacterMovement : MonoBehaviour
     }
     void lookRotation()
     {
+        if (onRope) return;
         float rotspeed;
         if (isDodging)
-            rotspeed = 3f;
+            rotspeed = 2f;
         else
             rotspeed = 10f;
         if (inputVector != Vector3.zero)
@@ -94,19 +100,7 @@ public class CharacterMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotspeed);
         }
     }
-    private void flip()
-    {
 
-        if (inputVector.magnitude > 0 && Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetBool("flip", true);
-            rb.AddForce(inputVector * Time.fixedDeltaTime);
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            animator.SetBool("flip", false);
-        }
-    }
     public void CharacterAnimation()
     {
         if (inputVector != Vector3.zero)

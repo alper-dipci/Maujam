@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     [SerializeField]private int damage;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -13,5 +14,6 @@ public class Sword : MonoBehaviour
             player.takeDamage(damage);
             //instantiate VFX
         }
+
     }
 }

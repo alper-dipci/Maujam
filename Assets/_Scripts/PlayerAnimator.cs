@@ -11,6 +11,7 @@ public class PlayerAnimator : MonoBehaviour {
     float maxComboDelay = 2;
     public float delay1;
     private Rigidbody rb;
+    [SerializeField] BoxCollider swordCollider;
     [SerializeField] TrailRenderer swordTrail;
     void Start()
     {
@@ -28,12 +29,14 @@ public class PlayerAnimator : MonoBehaviour {
             currentStateCount = 0;
             anim.SetLayerWeight(0, 0);
             swordTrail.enabled = false;
+            swordCollider.enabled = false;
         }
 
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetLayerWeight(1, 1);
             swordTrail.enabled = true;
+            swordCollider.enabled = true;
             onAttackClick();
         }
 
@@ -58,7 +61,7 @@ public class PlayerAnimator : MonoBehaviour {
         if (Time.time- lastClickedTime < delay1) return;
         
         lastClickedTime = Time.time;
-        if (currentStateCount >= 3)
+        if (currentStateCount >= 2)
             currentStateCount = 0;
         currentStateCount++;
         anim.SetTrigger("hit" + currentStateCount);

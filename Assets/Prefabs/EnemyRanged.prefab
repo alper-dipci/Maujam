@@ -150,9 +150,9 @@ MonoBehaviour:
   isHitting: 0
   canHit: 0
   timeBetweenHits: 1
-  HitRange: 8
-  detectRange: 10
-  unDetectRange: 15
+  HitRange: 12
+  detectRange: 15
+  unDetectRange: 20
   randomCircleArea: 6
   timeBetweenPatrols: 2
   Arrow: {fileID: 7977782101696282858, guid: ea383121a1c61e546a866f949b79d7ca, type: 3}
