@@ -15,7 +15,7 @@ public class CharacterMovement : MonoBehaviour {
     [SerializeField] private float dodgeForce;
 
     Vector3 inputVector;
-    Vector3 movement;
+    public Vector3 movement;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera vcam;
 
     void Start()
@@ -79,7 +79,7 @@ public class CharacterMovement : MonoBehaviour {
         movement = inputVector * moveSpeed;
         Quaternion cameraRotation = Quaternion.Euler(0, -33, 0);
         movement = cameraRotation * movement;
-        rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+        rb.velocity = movement;
     }
     void lookRotation()
     {

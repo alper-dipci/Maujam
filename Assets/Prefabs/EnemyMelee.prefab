@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4851406474232137424}
   - component: {fileID: 2888825044626468350}
   - component: {fileID: 8450043960604011553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 9949256324067341}
   - component: {fileID: 7367797098901782510}
   - component: {fileID: 9144486183841383506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}

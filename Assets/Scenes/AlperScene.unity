@@ -169,17 +169,17 @@ PrefabInstance:
     - target: {fileID: 8838922656214785330, guid: 4a94d4b0013bebf44bc16e9f797e4215,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.32547733
+      value: 0.32547736
       objectReference: {fileID: 0}
     - target: {fileID: 8838922656214785330, guid: 4a94d4b0013bebf44bc16e9f797e4215,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.27251312
+      value: -0.27251318
       objectReference: {fileID: 0}
     - target: {fileID: 8838922656214785330, guid: 4a94d4b0013bebf44bc16e9f797e4215,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.098546594
+      value: 0.09854661
       objectReference: {fileID: 0}
     - target: {fileID: 8838922656214785330, guid: 4a94d4b0013bebf44bc16e9f797e4215,
         type: 3}
@@ -264,6 +264,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerModelli
       objectReference: {fileID: 0}
+    - target: {fileID: 2569434304833272022, guid: 5f6d86eb58ae86d46823e3d4ecded7a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5792722303331319832, guid: 5f6d86eb58ae86d46823e3d4ecded7a5,
         type: 3}
       propertyPath: vcam
@@ -329,6 +334,11 @@ PrefabInstance:
       propertyPath: CMVCam
       value: 
       objectReference: {fileID: 1285800315}
+    - target: {fileID: 8812386851055327562, guid: 5f6d86eb58ae86d46823e3d4ecded7a5,
+        type: 3}
+      propertyPath: EnemyLayerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -394,17 +404,17 @@ PrefabInstance:
     - target: {fileID: 5085263123518632692, guid: 59918db5d34d0cb4bb187e84f3298c3e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.32547733
+      value: 0.32547736
       objectReference: {fileID: 0}
     - target: {fileID: 5085263123518632692, guid: 59918db5d34d0cb4bb187e84f3298c3e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.27251312
+      value: -0.27251318
       objectReference: {fileID: 0}
     - target: {fileID: 5085263123518632692, guid: 59918db5d34d0cb4bb187e84f3298c3e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.098546594
+      value: 0.09854661
       objectReference: {fileID: 0}
     - target: {fileID: 5085263123518632692, guid: 59918db5d34d0cb4bb187e84f3298c3e,
         type: 3}
@@ -762,7 +772,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.15
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -1176,6 +1186,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   dodgeAudio: {fileID: 0}
   dodgeForce: 0
+  movement: {x: 0, y: 0, z: 0}
   vcam: {fileID: 0}
 --- !u!95 &2823754598149821725
 Animator:

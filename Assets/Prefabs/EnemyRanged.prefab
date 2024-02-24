@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5001510222533256387}
   - component: {fileID: 8340149429983278796}
   - component: {fileID: 7496309447526082382}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyRanged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4887593805949102444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ArrowPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 3150346882467845389}
   - component: {fileID: 6877913019522429184}
   - component: {fileID: 4450852201325648374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Burun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

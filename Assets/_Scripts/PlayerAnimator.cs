@@ -5,38 +5,22 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour {
 
     private Animator anim;
-    [SerializeField] private float cooldownTime = 2;
-    private float nextFireTime = 0;
     public int noOfClicks = 0;
     public int currentStateCount;
     float lastClickedTime = 0;
     float maxComboDelay = 2;
     public float delay1;
-    public float delay2;
+    private Rigidbody rb;
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        anim.SetFloat("Speed", rb.velocity.magnitude);
 
-        //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
-        //{
-        //    anim.SetBool("hit1", false);
-
-        //}
-        //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
-        //{
-        //    anim.SetBool("hit2", false);
-
-        //}
-        //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay1 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
-        //{
-        //    anim.SetBool("hit3", false);
-        //    noOfClicks = 0;
-        //}
 
         if (Time.time - lastClickedTime > maxComboDelay)
         {

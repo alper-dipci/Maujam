@@ -6,6 +6,10 @@ public class Arrow : MonoBehaviour
 {
     [SerializeField] int damage;
     [SerializeField] int speed;
+    private void Start()
+    {
+        Destroy(gameObject,5f);
+    }
     void Update()
     {
         transform.Translate(Vector3.forward*Time.deltaTime*speed, Space.Self);

@@ -18,7 +18,6 @@ public class MeleeEnemy : Enemy
         canHit = false;
         timer = timeBetweenHits;
         //animator.SetTrigger("hit");
-        Debug.Log("hitMelee");
         swordCollider.enabled=true;
     }
     public void onAnimatonEnd()
