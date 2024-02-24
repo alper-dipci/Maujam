@@ -148,6 +148,7 @@ MonoBehaviour:
   playerGameobject: {fileID: 0}
   isTriggered: 0
   isHitting: 0
+  health: 0
   canHit: 0
   timeBetweenHits: 1
   HitRange: 12
