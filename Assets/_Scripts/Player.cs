@@ -8,6 +8,9 @@ using Unity.Burst.CompilerServices;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+
+
     [SerializeField] private int health = 100;
 
     [SerializeField] private CinemachineVirtualCamera CMVCam;
@@ -19,7 +22,20 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float shakeMagnitude;
     PlayerAnimator playerAnimator;
+ 
+private void Awake() 
+{ 
+    // If there is an instance, and it's not me, delete myself.
 
+    if (Instance != null && Instance != this) 
+    { 
+        Destroy(this); 
+    } 
+    else 
+    { 
+        Instance = this; 
+    } 
+}
 
     private void Start()
     {
@@ -39,20 +55,34 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
-            RaycastHit _hit;
+            Transform characterTransform = transform;
 
-            if (Physics.Raycast(ray, out _hit))
+            Vector3 forward = characterTransform.forward;
+
+
+            Vector3 rayOrigin = characterTransform.position;
+
+
+            Ray ray = new Ray(rayOrigin, forward);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 2f))
             {
-                if (_hit.collider.TryGetComponent(out IInteractable interactObject))
+
+                if (hit.collider.TryGetComponent(out IInteractable interactObject))
                 {
                     interactObject.Interact();
                 }
 
+
+                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red, 1f);
             }
         }
+
 
         if (_shakeTimer > 0)
         {
