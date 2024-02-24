@@ -34,9 +34,9 @@ public class CharacterMovement : MonoBehaviour
         RecordControls();
         if (dodgeTimer >= 0) dodgeTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            AudioSourceManager.Instance._sounds[0].Play();
+
             if (dodgeTimer > 0) return;
             if (inputVector.magnitude != 0 && dodgeTimer <= 0)
             {
@@ -54,7 +54,7 @@ public class CharacterMovement : MonoBehaviour
     }
     private IEnumerator Dodge()
     {
-
+        AudioSourceManager.Instance._sounds[0].Play();
         animator.SetTrigger("Dodge");
         isDodging = true;
         dodgeTimer = .8f;

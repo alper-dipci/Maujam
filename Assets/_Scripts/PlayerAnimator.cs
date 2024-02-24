@@ -32,7 +32,7 @@ public class PlayerAnimator : MonoBehaviour {
             swordCollider.enabled = false;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetLayerWeight(1, 1);
             swordTrail.enabled = true;
