@@ -105,6 +105,7 @@ public class Player : MonoBehaviour
 
     public void takeDamage(int amount)
     {
+        AudioSourceManager.Instance._sounds[4].Play();
         playerAnimator.getHit();
         health -= amount;
         ShakeCamera(shakeMagnitude, .1f);

@@ -36,8 +36,9 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            AudioSourceManager.Instance._sounds[0].Play();
             if (dodgeTimer > 0) return;
-            if (inputVector.magnitude != 0 && dodgeTimer<=0)
+            if (inputVector.magnitude != 0 && dodgeTimer <= 0)
             {
                 Debug.Log("dodge");
                 dodgeTimer += dodge_coolDown;
@@ -47,9 +48,9 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && canRope)
         {
             onRope = !onRope;
-            
+
         }
-            
+
     }
     private IEnumerator Dodge()
     {
@@ -58,7 +59,7 @@ public class CharacterMovement : MonoBehaviour
         isDodging = true;
         dodgeTimer = .8f;
         transform.DOMove(transform.position + movement.normalized * dodgeForce, dodgeTimer);
-        yield return new WaitForSeconds(dodgeTimer-.1f);
+        yield return new WaitForSeconds(dodgeTimer - .1f);
         isDodging = false;
 
 
@@ -68,7 +69,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("rope"))
         {
-            Vector3 direction = other.gameObject.transform.position - transform.position ;
+            Vector3 direction = other.gameObject.transform.position - transform.position;
             direction.y = 0;
             transform.rotation = Quaternion.LookRotation(direction);
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
