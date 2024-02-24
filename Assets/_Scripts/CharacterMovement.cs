@@ -44,18 +44,35 @@ public class CharacterMovement : MonoBehaviour
 
         }
     }
-    private IEnumerator  Dodge()
+    private IEnumerator Dodge()
     {
 
         animator.SetTrigger("Dodge");
         isDodging = true;
         dodgeTimer = .8f;
-        transform.DOMove(transform.position +movement.normalized * dodgeForce, dodgeTimer);
+        transform.DOMove(transform.position + movement.normalized * dodgeForce, dodgeTimer);
         yield return new WaitForSeconds(dodgeTimer);
         isDodging = false;
 
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("rope"))
+        {
+            onRope = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("rope"))
+        {
+            onRope = false;
+        }
+    }
+
 
     void RecordControls()
     {
@@ -63,13 +80,19 @@ public class CharacterMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-
         inputVector = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+
         if (onRope)
         {
-            animator.SetTrigger("rope");
+            animator.SetBool("climb", true);
             inputVector = new Vector3(0, verticalInput, 0).normalized;
         }
+        else
+        {
+
+            animator.SetBool("climb", false);
+        }
+
     }
 
     private void FixedUpdate()
