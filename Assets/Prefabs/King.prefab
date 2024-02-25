@@ -96,7 +96,7 @@ MonoBehaviour:
   playerGameobject: {fileID: 0}
   isTriggered: 0
   animator: {fileID: 8539114055640037315}
-  health: 250
+  health: 200
   timeBetweenHits: 5
   HitRange: 10
   detectRange: 60
@@ -113,6 +113,7 @@ MonoBehaviour:
   - {fileID: 2718676798638686781, guid: 225c744feefa747499401b1fbf64da00, type: 3}
   indicatorTime: 1
   skillLifeTime: 2
+  levelManager: {fileID: 0}
 --- !u!95 &8539114055640037315
 Animator:
   serializedVersion: 5
