@@ -8,6 +8,7 @@ public class King : Enemy
     [SerializeField] List<GameObject> skillIndicator = new List<GameObject>();
     [SerializeField]private float indicatorTime;
     [SerializeField]private float skillLifeTime;
+    [SerializeField] LevelManager levelManager;
 
     Vector3 skillPos;
     public override void hit()
@@ -24,6 +25,19 @@ public class King : Enemy
         animator.SetBool("isWalk", false);
         Debug.Log(skillNumber);
         doSkill(skillNumber);
+    }
+    public override void die() {
+        GetComponent<Collider>().enabled = false;
+        dead = true;
+        agent.SetDestination(transform.position);
+        animator.SetTrigger("death");
+        StartCoroutine(loadlevel());
+
+    }
+    private IEnumerator loadlevel()
+    {
+        yield return new WaitForSeconds(2.2f);
+        levelManager.LoadLevel("InCastleDialog");
     }
     private void doSkill(int skillNumber)
     {

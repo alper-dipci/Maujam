@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] protected GameObject playerGameobject;
-    private NavMeshAgent agent;
+    protected NavMeshAgent agent;
     public bool isTriggered;
     protected bool isHitting;
     [SerializeField] public Animator animator;
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float timeBetweenPatrols = 2f;
     private float waitForPatroltimer;
     private bool waitForPatrol;
-    private bool dead;
+    protected bool dead;
 
     protected virtual void Start()
     {
@@ -131,7 +131,7 @@ public class Enemy : MonoBehaviour
         }
         
     }
-    void die()
+    public virtual void die()
     {
         GetComponent<Collider>().enabled = false;
         dead = true;

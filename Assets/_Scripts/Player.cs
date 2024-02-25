@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float shakeMagnitude;
     PlayerAnimator playerAnimator;
 
+    [SerializeField] LevelManager _levelManager;
 
     [SerializeField] GameObject[] _hearts;
 
@@ -179,8 +180,19 @@ public class Player : MonoBehaviour
         if (health <= 0)
             die();
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("dieLine"))
+        {
+            die();
+        }
+    }
     private void die()
     {
+
+        _levelManager.RestartGame();
     }
 
 
