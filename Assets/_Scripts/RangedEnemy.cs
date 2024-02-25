@@ -13,6 +13,8 @@ public class RangedEnemy : Enemy
         isHitting = true;
         canHit = false;
         timer = timeBetweenHits;
+        animator.SetLayerWeight(1, 1);
+        animator.SetTrigger("hit");
         GameObject arrow =  Instantiate(Arrow,ArrowPosition.position,Quaternion.identity);
         Vector3 lookPos = playerGameobject.transform.position+Vector3.up* playerHeight - arrow.transform.position;
         arrow.transform.rotation = Quaternion.LookRotation(lookPos);

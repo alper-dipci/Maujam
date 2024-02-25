@@ -35,7 +35,7 @@ Transform:
   - {fileID: 4887593805949102444}
   - {fileID: 8983317308700623952}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &5001510222533256387
 CapsuleCollider:
@@ -115,7 +115,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3520839030715559289}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 6c414f455b36f424d87f9e1d7e821044, type: 3}
   m_Controller: {fileID: 9100000, guid: d5f3f9b561cb51f4486ac2d5f456fd5c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -226,7 +226,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 6c414f455b36f424d87f9e1d7e821044, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

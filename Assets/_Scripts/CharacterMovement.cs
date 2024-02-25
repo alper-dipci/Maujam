@@ -55,7 +55,6 @@ public class CharacterMovement : MonoBehaviour
             if (dodgeTimer > 0) return;
             if (inputVector.magnitude != 0 && dodgeTimer <= 0)
             {
-                Debug.Log("dodge");
                 dodgeTimer += dodge_coolDown;
                 StartCoroutine(Dodge()); //Only if the character is moving, dodging is allowed.
             }

@@ -57,6 +57,8 @@ public class Enemy : MonoBehaviour
             LookAtTarget();
             agent.stoppingDistance = HitRange;
             agent.SetDestination(playerGameobject.transform.position);
+            if (isAgentArrived())
+                animator.SetBool("isWalk", false);
             if (isAgentArrived()&&canHit)
                 hit();
             else if (!isAgentArrived())
@@ -117,14 +119,20 @@ public class Enemy : MonoBehaviour
     public void getHit(int damage)
     {
         health -= damage;
-        if (health < 0) die();
-        ResetAllTriggers();
-        animator.SetTrigger("getHit");
+        if (health < 0) {
+            die();
+        }
+        else
+        {
+            ResetAllTriggers();
+            animator.SetTrigger("getHit");
+        }
+        
     }
     void die()
     {
         animator.SetTrigger("death");
-        Destroy(gameObject,1f);
+        Destroy(gameObject,2.5f);
     }
     private void ResetAllTriggers()
     {
