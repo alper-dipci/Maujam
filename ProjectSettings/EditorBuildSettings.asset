@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroStoryScene.unity
     guid: be144be16c7a71744b01bbb17e1e342e
+  - enabled: 1
+    path: Assets/Scenes/InCastleDialog.unity
+    guid: 0a17aabc913e0b14690dd9d9c90d4bcb
   m_configObjects: {}
