@@ -849,7 +849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: asdkmlklsdmklasdmaskldmaslkdmaskldasmkldasmldkasmlkdasmkldasmkldasmdklasdmlaskdmklsdklasdmaskldmaskl
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2061,6 +2061,10 @@ MonoBehaviour:
   - {fileID: 1887549092}
   - {fileID: 1656664877}
   - {fileID: 889809940}
+  - {fileID: 1145104770}
+  - {fileID: 308450130}
+  - {fileID: 397812552}
+  - {fileID: 1302554823}
   text: {fileID: 708727503}
   uiFadeOut: {fileID: 1033140586}
 --- !u!4 &1650934262
