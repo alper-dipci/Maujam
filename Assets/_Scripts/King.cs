@@ -45,7 +45,7 @@ public class King : Enemy
         GameObject indicator = Instantiate(skillIndicator[0],skillPos,Quaternion.identity);
         yield return new WaitForSeconds(indicatorTime);
         Destroy(indicator);
-        GameObject skill = Instantiate(skillIndicator[0], skillPos, Quaternion.identity);
+        GameObject skill = Instantiate(SkillVfx[0], skillPos, Quaternion.identity);
         Destroy(skill, skillLifeTime);
     }
     private IEnumerator skill2()
@@ -53,7 +53,7 @@ public class King : Enemy
         GameObject indicator = Instantiate(skillIndicator[1], skillPos, Quaternion.identity);
         yield return new WaitForSeconds(indicatorTime);
         Destroy(indicator);
-        GameObject skill = Instantiate(skillIndicator[1], skillPos, Quaternion.identity);
+        GameObject skill = Instantiate(SkillVfx[1], skillPos, Quaternion.identity);
         Destroy(skill, skillLifeTime);
     }
     private IEnumerator skill3()
@@ -61,7 +61,7 @@ public class King : Enemy
         GameObject indicator = Instantiate(skillIndicator[2], skillPos, Quaternion.identity);
         yield return new WaitForSeconds(indicatorTime);
         Destroy(indicator);
-        GameObject skill = Instantiate(skillIndicator[2], skillPos, Quaternion.identity);
+        GameObject skill = Instantiate(SkillVfx[2], skillPos, Quaternion.identity);
         Destroy(skill, skillLifeTime);
     }
 }

@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 1182861412121980923}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &6901576220746825366
 CapsuleCollider:
@@ -97,16 +97,22 @@ MonoBehaviour:
   isTriggered: 0
   animator: {fileID: 8539114055640037315}
   health: 100
-  timeBetweenHits: 4
+  timeBetweenHits: 5
   HitRange: 40
   detectRange: 60
   unDetectRange: 100
   randomCircleArea: 10
   timeBetweenPatrols: 2
-  SkillVfx: []
-  skillIndicator: []
-  indicatorTime: 0
-  skillLifeTime: 0
+  SkillVfx:
+  - {fileID: 6942145941044402380, guid: 62206c8a2cd218142baa7b9b505a067b, type: 3}
+  - {fileID: 6942145941044402380, guid: 62206c8a2cd218142baa7b9b505a067b, type: 3}
+  - {fileID: 6942145941044402380, guid: 62206c8a2cd218142baa7b9b505a067b, type: 3}
+  skillIndicator:
+  - {fileID: 2718676798638686781, guid: 00521ce95962ca443b8324637c8239ad, type: 3}
+  - {fileID: 2718676798638686781, guid: 00521ce95962ca443b8324637c8239ad, type: 3}
+  - {fileID: 2718676798638686781, guid: 00521ce95962ca443b8324637c8239ad, type: 3}
+  indicatorTime: 1
+  skillLifeTime: 2
 --- !u!95 &8539114055640037315
 Animator:
   serializedVersion: 5
