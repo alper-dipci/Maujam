@@ -862,6 +862,8 @@ GameObject:
   - component: {fileID: 1033140582}
   - component: {fileID: 1033140585}
   - component: {fileID: 1033140584}
+  - component: {fileID: 1033140587}
+  - component: {fileID: 1033140586}
   m_Layer: 5
   m_Name: BlackScreen
   m_TagString: Untagged
@@ -902,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -927,6 +929,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033140581}
   m_CullTransparentMesh: 1
+--- !u!114 &1033140586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033140581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29c877afecfa1b4fac302b02601de14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1033140587}
+  speed: 1
+  fadeOut: 0
+--- !u!225 &1033140587
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033140581}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1134488407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1512,7 @@ MonoBehaviour:
   - {fileID: 1656664877}
   - {fileID: 889809940}
   text: {fileID: 708727503}
+  uiFadeOut: {fileID: 1033140586}
 --- !u!4 &1650934262
 Transform:
   m_ObjectHideFlags: 0
