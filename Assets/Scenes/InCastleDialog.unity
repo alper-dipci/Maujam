@@ -316,7 +316,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AS
+  m_text: "Ben seyahatteydim b\xF6yle bir \u015Fey yapmam imkans\u0131z. Bu zamana
+    kadar hi\xE7bir zaman halk\u0131ma zarar vermedim."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -451,7 +452,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nbr
+  m_text: "Kral\u0131m ben ve k\xF6yl\xFCler bu karga\u015Fa i\xE7erisinde yolumuzu
+    kaybettik. D\xFCzenbaz\u0131n zulm\xFC i\xE7erisinde yanl\u0131\u015F\u0131 do\u011Fruyu
+    ay\u0131rt edemedik. \u015Euan bu yapt\u0131\u011F\u0131mdan dolay\u0131 pi\u015Fmanl\u0131k
+    i\xE7erisindeyim."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1048,7 +1052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: anan
+  m_text: "Zul\xFCm m\xFC ? Neyden bahsediyorsun sen?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1392,7 +1396,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sa
+  m_text: "Sen bizim ekinlerimizi yakt\u0131n,mallar\u0131m\u0131za el koydun! Elimizde
+    ekmek bile b\u0131rakmad\u0131n!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1527,7 +1532,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: anan
+  m_text: "Bu d\xFCzenbazl\u0131k hepimize ders vermeli. O\u011Flumun masum yere
+    can\u0131n\u0131n al\u0131nmas\u0131, senin de can\u0131na sebep olacak"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2130,7 +2136,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nbr
+  m_text: "Ne hakla m\u0131 ? Bize etti\u011Fin zul\xFCm can\u0131m\u0131za tak etti.
+    Ne bekliyordun ki ? "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2293,7 +2300,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AS
+  m_text: "Durup dururken neden bana sald\u0131rd\u0131n ? Hem masum o\u011Flumun
+    can\u0131n\u0131 ald\u0131n, hemde bana sald\u0131r\u0131yorsun. Ne hakla bunu
+    yapabilirsin ? "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
