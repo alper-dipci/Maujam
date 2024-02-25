@@ -448,6 +448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _sounds.Array.data[4]
       value: 
+      objectReference: {fileID: 1423330332}
+    - target: {fileID: 5883736714344679860, guid: 2227def74b24e9b43bf3943f50e65f28,
+        type: 3}
+      propertyPath: _sounds.Array.data[5]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5883736714344679860, guid: 2227def74b24e9b43bf3943f50e65f28,
         type: 3}
@@ -5051,6 +5056,12 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 72219817}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1423330332 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8900552243931950581, guid: 2227def74b24e9b43bf3943f50e65f28,
+    type: 3}
+  m_PrefabInstance: {fileID: 72219817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1428164809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8430,7 +8441,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6881360503984713238}
-  m_LocalRotation: {x: 0.32547733, y: -0.27251312, z: 0.098546594, w: 0.9000498}
+  m_LocalRotation: {x: 0.32547736, y: -0.27251318, z: 0.09854661, w: 0.9000498}
   m_LocalPosition: {x: 47, y: 45, z: -26.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8891,7 +8902,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7555438616008990084}
-  m_LocalRotation: {x: 0.32547733, y: -0.27251312, z: 0.098546594, w: 0.9000498}
+  m_LocalRotation: {x: 0.32547736, y: -0.27251318, z: 0.09854661, w: 0.9000498}
   m_LocalPosition: {x: 47, y: 45, z: -26.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
