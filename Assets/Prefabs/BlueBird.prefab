@@ -722,7 +722,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8550882650631636229}
   - component: {fileID: 5968873113878734447}
-  - component: {fileID: 7498950350746692786}
   - component: {fileID: 7942895290339704220}
   m_Layer: 0
   m_Name: BlueBird
@@ -746,7 +745,7 @@ Transform:
   - {fileID: 8417857622928328060}
   - {fileID: 8421870843616712001}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5968873113878734447
 Animator:
@@ -769,27 +768,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &7498950350746692786
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2936476048627156167}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.14488772, y: 0.07834596, z: 0.12274956}
-  m_Center: {x: 0.008459397, y: 0.03231783, z: -0.014554527}
 --- !u!114 &7942895290339704220
 MonoBehaviour:
   m_ObjectHideFlags: 0
