@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4224425105293766712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3.5835, y: 3.5835, z: 3.5835}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1182861412121980923}
@@ -98,19 +98,19 @@ MonoBehaviour:
   animator: {fileID: 8539114055640037315}
   health: 250
   timeBetweenHits: 5
-  HitRange: 40
+  HitRange: 10
   detectRange: 60
   unDetectRange: 100
   randomCircleArea: 10
   timeBetweenPatrols: 2
   SkillVfx:
   - {fileID: 6942145941044402380, guid: 62206c8a2cd218142baa7b9b505a067b, type: 3}
-  - {fileID: 6942145941044402380, guid: 62206c8a2cd218142baa7b9b505a067b, type: 3}
-  - {fileID: 6942145941044402380, guid: 62206c8a2cd218142baa7b9b505a067b, type: 3}
+  - {fileID: 6942145941044402380, guid: 3cdda3b1d8d963942bd3df11ca6c148f, type: 3}
+  - {fileID: 6942145941044402380, guid: 347b58a5823054e4c88e4af4877ffb89, type: 3}
   skillIndicator:
   - {fileID: 2718676798638686781, guid: 00521ce95962ca443b8324637c8239ad, type: 3}
-  - {fileID: 2718676798638686781, guid: 00521ce95962ca443b8324637c8239ad, type: 3}
-  - {fileID: 2718676798638686781, guid: 00521ce95962ca443b8324637c8239ad, type: 3}
+  - {fileID: 2718676798638686781, guid: 357ca3aea9416004194b955703c0de77, type: 3}
+  - {fileID: 2718676798638686781, guid: 225c744feefa747499401b1fbf64da00, type: 3}
   indicatorTime: 1
   skillLifeTime: 2
 --- !u!95 &8539114055640037315

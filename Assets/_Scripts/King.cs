@@ -15,14 +15,14 @@ public class King : Enemy
         // EGER KACIRIRSA UPDATE ICINDEN AL POZÝSYONU
         skillPos = playerGameobject.transform.position;
 
-        int skillNumber = Random.Range(1, SkillVfx.Count);
+        int skillNumber = Random.Range(1, SkillVfx.Count+1);
         isHitting = true;
         canHit = false;
         timer = timeBetweenHits;
         animator.SetLayerWeight(1, 1);
         animator.SetTrigger("hit"+ skillNumber);
         animator.SetBool("isWalk", false);
-
+        Debug.Log(skillNumber);
         doSkill(skillNumber);
     }
     private void doSkill(int skillNumber)
@@ -58,10 +58,10 @@ public class King : Enemy
     }
     private IEnumerator skill3()
     {
+        skillPos = transform.position;
         GameObject indicator = Instantiate(skillIndicator[2], skillPos, Quaternion.identity);
         yield return new WaitForSeconds(indicatorTime);
         Destroy(indicator);
         GameObject skill = Instantiate(SkillVfx[2], skillPos, Quaternion.identity);
-        Destroy(skill, skillLifeTime);
     }
 }
