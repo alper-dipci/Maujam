@@ -215,8 +215,8 @@ MonoBehaviour:
   animator: {fileID: -6396725802867677681}
   health: 10
   timeBetweenHits: 3
-  HitRange: 25
-  detectRange: 30
+  HitRange: 20
+  detectRange: 20
   unDetectRange: 40
   randomCircleArea: 8
   timeBetweenPatrols: 2

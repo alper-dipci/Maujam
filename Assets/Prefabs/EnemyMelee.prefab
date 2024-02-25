@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2241795639129033916}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4851406474232137424
 CapsuleCollider:
@@ -99,7 +99,7 @@ MonoBehaviour:
   health: 1
   timeBetweenHits: 4
   HitRange: 2
-  detectRange: 20
+  detectRange: 15
   unDetectRange: 40
   randomCircleArea: 6
   timeBetweenPatrols: 2
