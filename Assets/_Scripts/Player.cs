@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     PlayerAnimator playerAnimator;
 
 
+    [SerializeField] GameObject[] _hearts;
+
     public bool _skill1, _skill2, _skill3
     = false;
 
@@ -141,6 +143,24 @@ public class Player : MonoBehaviour
         AudioSourceManager.Instance._sounds[4].Play();
         playerAnimator.getHit();
         health -= amount;
+
+        if (health <= 100)
+        {
+            _hearts[0].SetActive(false);
+        }
+        if (health <= 50)
+        {
+            _hearts[1].SetActive(false);
+        }
+        if (health <= 0)
+        {
+            _hearts[2].SetActive(false);
+            Debug.Log("ÖLDÜN");
+        }
+
+
+
+
         ShakeCamera(shakeMagnitude, .1f);
         Collider[] enemys = Physics.OverlapSphere(transform.position, 12f, EnemyLayerMask);
         foreach (Collider col in enemys)
