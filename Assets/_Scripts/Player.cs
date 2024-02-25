@@ -5,6 +5,7 @@ using Cinemachine;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using Unity.Burst.CompilerServices;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -95,13 +96,17 @@ public class Player : MonoBehaviour
                             case Skills.skill1:
 
                                 _skill1 = true;
+                                TMPText.keyCount++;
+                                AudioSourceManager.Instance._sounds[11].Play();
                                 break;
                             case Skills.skill2:
-
+                                TMPText.keyCount++;
+                                AudioSourceManager.Instance._sounds[11].Play();
                                 _skill2 = true;
                                 break;
                             case Skills.skill3:
-
+                                TMPText.keyCount++;
+                                AudioSourceManager.Instance._sounds[11].Play();
                                 _skill3 = true;
                                 break;
                             default:
@@ -188,10 +193,15 @@ public class Player : MonoBehaviour
         {
             die();
         }
+
+        if (other.gameObject.CompareTag("castleScene") && TMPText.keyCount == 3)
+        {
+            SceneManager.LoadScene("casteInFight");
+        }
     }
     private void die()
     {
-
+        TMPText.keyCount = 0;
         _levelManager.RestartGame();
     }
 
