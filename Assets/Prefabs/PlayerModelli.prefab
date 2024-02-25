@@ -385,14 +385,14 @@ Transform:
   m_GameObject: {fileID: 2323396081711697796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.766532, y: -0.5194998, z: -4.2124777}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2474280222901093279}
   - {fileID: 596221988545417908}
   - {fileID: 6857860780842234481}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2569434304833272022
 Animator:
@@ -477,11 +477,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351234e7cce9e3e45bf04a50c034e6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
   dodge_coolDown: 2
   dodgeTimer: 0
   dodgeAudio: {fileID: 0}
-  dodgeForce: 10
+  dodgeForce: 5
   dust: {fileID: 7384911666394549473}
   movement: {x: 0, y: 0, z: 0}
   onRope: 0
@@ -498,12 +498,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96017d8fea8491489fbb9d55d95c9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
   CMVCam: {fileID: 0}
   EnemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
   shakeMagnitude: 0.7
+  _levelManager: {fileID: 0}
+  _hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _skill1: 0
   _skill2: 0
   _skill3: 0

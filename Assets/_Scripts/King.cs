@@ -6,8 +6,8 @@ public class King : Enemy
 {
     [SerializeField] List<GameObject> SkillVfx = new List<GameObject>();
     [SerializeField] List<GameObject> skillIndicator = new List<GameObject>();
-    [SerializeField]private float indicatorTime;
-    [SerializeField]private float skillLifeTime;
+    [SerializeField] private float indicatorTime;
+    [SerializeField] private float skillLifeTime;
     [SerializeField] LevelManager levelManager;
 
     Vector3 skillPos;
@@ -16,17 +16,18 @@ public class King : Enemy
         // EGER KACIRIRSA UPDATE ICINDEN AL POZÝSYONU
         skillPos = playerGameobject.transform.position;
 
-        int skillNumber = Random.Range(1, SkillVfx.Count+1);
+        int skillNumber = Random.Range(1, SkillVfx.Count + 1);
         isHitting = true;
         canHit = false;
         timer = timeBetweenHits;
         animator.SetLayerWeight(1, 1);
-        animator.SetTrigger("hit"+ skillNumber);
+        animator.SetTrigger("hit" + skillNumber);
         animator.SetBool("isWalk", false);
         Debug.Log(skillNumber);
         doSkill(skillNumber);
     }
-    public override void die() {
+    public override void die()
+    {
         GetComponent<Collider>().enabled = false;
         dead = true;
         agent.SetDestination(transform.position);
@@ -56,9 +57,10 @@ public class King : Enemy
     }
     private IEnumerator skill1()
     {
-        GameObject indicator = Instantiate(skillIndicator[0],skillPos,Quaternion.identity);
+        GameObject indicator = Instantiate(skillIndicator[0], skillPos, Quaternion.identity);
         yield return new WaitForSeconds(indicatorTime);
         Destroy(indicator);
+        AudioSourceManager.Instance._sounds[8].Play();
         GameObject skill = Instantiate(SkillVfx[0], skillPos, Quaternion.identity);
         Destroy(skill, skillLifeTime);
     }
@@ -67,6 +69,7 @@ public class King : Enemy
         GameObject indicator = Instantiate(skillIndicator[1], skillPos, Quaternion.identity);
         yield return new WaitForSeconds(indicatorTime);
         Destroy(indicator);
+        AudioSourceManager.Instance._sounds[9].Play();
         GameObject skill = Instantiate(SkillVfx[1], skillPos, Quaternion.identity);
         Destroy(skill, skillLifeTime);
     }
@@ -75,6 +78,7 @@ public class King : Enemy
         skillPos = transform.position;
         GameObject indicator = Instantiate(skillIndicator[2], skillPos, Quaternion.identity);
         yield return new WaitForSeconds(indicatorTime);
+        AudioSourceManager.Instance._sounds[10].Play();
         Destroy(indicator);
         GameObject skill = Instantiate(SkillVfx[2], skillPos, Quaternion.identity);
     }
