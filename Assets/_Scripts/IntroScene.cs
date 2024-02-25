@@ -18,7 +18,7 @@ public class IntroScene : MonoBehaviour
             spriteIndex++;
             if(spriteIndex >= sprites.Count)
             {
-                levelManager.LoadLevel("AlperScene");
+                levelManager.LoadLevel("MainScene");
             }
             else
                 image.sprite = sprites[spriteIndex];
