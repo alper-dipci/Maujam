@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Chest : MonoBehaviour, IInteractable
 {
@@ -10,6 +11,7 @@ public class Chest : MonoBehaviour, IInteractable
 
     [SerializeField] GameObject _chestKapak;
     [SerializeField] ParticleSystem _chestParticle;
+
 
     public void Interact()
     {
