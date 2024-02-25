@@ -392,7 +392,7 @@ Transform:
   - {fileID: 596221988545417908}
   - {fileID: 6857860780842234481}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2569434304833272022
 Animator:
@@ -461,10 +461,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.4152355
+  m_Radius: 1.87
   m_Height: 6.9761496
   m_Direction: 1
-  m_Center: {x: 0.0139193535, y: 3.3794384, z: 0}
+  m_Center: {x: 0.0139193535, y: 3.3794384, z: 0.41}
 --- !u!114 &5792722303331319832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +504,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   shakeMagnitude: 0.7
+  _skill1: 0
+  _skill2: 0
+  _skill3: 0
 --- !u!114 &1133064510047646699
 MonoBehaviour:
   m_ObjectHideFlags: 0

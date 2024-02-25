@@ -38,13 +38,11 @@ public class CharacterMovement : MonoBehaviour
         {
             dust.Play();
             isDustPlaying = true;
-            Debug.Log("play");
         }    
         else if(inputVector.magnitude == 0 && isDustPlaying)
         {
             isDustPlaying = false;
             dust.Stop();
-            Debug.Log("stop");
         }
             
             

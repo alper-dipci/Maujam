@@ -43,20 +43,6 @@ public class PlayerAnimator : MonoBehaviour
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
     public void getHit()
     {
@@ -82,25 +68,7 @@ public class PlayerAnimator : MonoBehaviour
             currentStateCount = 0;
         currentStateCount++;
         anim.SetTrigger("hit" + currentStateCount);
-        //noOfClicks++;
-        //if (noOfClicks >= 1)
-        //{
-        //    Debug.Log("set1treue");
-        //    anim.SetBool("hit1", true);
-        //}
-        //noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
-        //if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
-        //{
-        //    Debug.Log("set2treue");
-        //    anim.SetBool(""", false);
-        //    anim.SetBool("hit2", true);
-        //}
-        //if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > delay2 && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
-        //{
-        //    Debug.Log("set3treue");
-        //    anim.SetBool("hit2", false);
-        //    anim.SetBool("hit3", true);
-        //}
+        AudioSourceManager.Instance._sounds[currentStateCount].Play();
     }
 }
