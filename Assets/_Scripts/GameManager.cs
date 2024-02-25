@@ -21,4 +21,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
+
+    private void Start()
+    {
+        AudioSourceManager.Instance._sounds[7].Play();
+    }
 }
