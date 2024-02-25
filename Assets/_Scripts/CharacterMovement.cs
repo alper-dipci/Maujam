@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -38,14 +39,14 @@ public class CharacterMovement : MonoBehaviour
         {
             dust.Play();
             isDustPlaying = true;
-        }    
-        else if(inputVector.magnitude == 0 && isDustPlaying)
+        }
+        else if (inputVector.magnitude == 0 && isDustPlaying)
         {
             isDustPlaying = false;
             dust.Stop();
         }
-            
-            
+
+
         RecordControls();
         if (dodgeTimer >= 0) dodgeTimer -= Time.deltaTime;
 
@@ -89,6 +90,11 @@ public class CharacterMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             canRope = true;
         }
+
+        if (other.gameObject.CompareTag("castleScene"))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -99,7 +105,7 @@ public class CharacterMovement : MonoBehaviour
             onRope = false;
         }
     }
-    
+
 
 
 

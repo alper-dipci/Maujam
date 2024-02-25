@@ -9,6 +9,7 @@ TagManager:
   - lb_groundTarget
   - lb_perchTarget
   - rope
+  - castleScene
   layers:
   - Default
   - TransparentFX

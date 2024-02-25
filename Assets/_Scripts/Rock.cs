@@ -51,6 +51,16 @@ public class Rock : MonoBehaviour, IInteractable
 
         AudioSourceManager.Instance._sounds[6].Play();
 
+
+        Vector3 direction = (_birdTarget.position - _bird.transform.position).normalized;
+
+
+        if (direction != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            _bird.transform.rotation = Quaternion.Slerp(_bird.transform.rotation, lookRotation, Time.deltaTime * 2f);
+        }
+
     }
 
 

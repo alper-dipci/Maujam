@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
                     {
                         Skills skillType = _skil.skil;
 
-                        // Hangi yetenek olduğunu kontrol edebilirsiniz
+                        // Hangi yetenek olduğunu k ol edebilirsiniz
                         switch (skillType)
                         {
                             case Skills.skill1:
