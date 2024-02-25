@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float timeBetweenPatrols = 2f;
     private float waitForPatroltimer;
     private bool waitForPatrol;
+    private bool dead;
 
     protected virtual void Start()
     {
@@ -43,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (dead) return;
         timer -= Time.deltaTime;
         if(waitForPatrol)
             waitForPatroltimer -= Time.deltaTime;
@@ -131,8 +133,11 @@ public class Enemy : MonoBehaviour
     }
     void die()
     {
+        GetComponent<Collider>().enabled = false;
+        dead = true;
+        agent.SetDestination(transform.position);
         animator.SetTrigger("death");
-        Destroy(gameObject,2.5f);
+        Destroy(gameObject,2.2f);
     }
     private void ResetAllTriggers()
     {
