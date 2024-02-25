@@ -23,16 +23,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133744343995903168}
-  m_LocalRotation: {x: -0.25883773, y: -0.4308062, z: 0.8426975, w: 0.19305415}
-  m_LocalPosition: {x: -0.724, y: -2.276, z: 1.287}
-  m_LocalScale: {x: 1.3787968, y: 1.3787966, z: 1.3787966}
+  m_LocalRotation: {x: 0.816846, y: 0.43381935, z: -0.36524278, w: -0.105646074}
+  m_LocalPosition: {x: -0.9, y: -0.92, z: -0.06}
+  m_LocalScale: {x: 1.3787966, y: 1.3787963, z: 1.3787965}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6863488180234079136}
   - {fileID: 3274931216771876413}
-  m_Father: {fileID: 6033972244252344159}
+  m_Father: {fileID: 3525873601481257493}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 38.766, y: -50.608, z: 135.306}
+  m_LocalEulerAnglesHint: {x: 8.297, y: 224.078, z: 127.419}
 --- !u!1 &2446656868953732743
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,10 +213,10 @@ MonoBehaviour:
   playerGameobject: {fileID: 0}
   isTriggered: 0
   animator: {fileID: -6396725802867677681}
-  health: 30
+  health: 10
   timeBetweenHits: 3
-  HitRange: 15
-  detectRange: 20
+  HitRange: 25
+  detectRange: 30
   unDetectRange: 40
   randomCircleArea: 8
   timeBetweenPatrols: 2
@@ -404,7 +404,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1f63ab8e7055d2f4daf3642184ba8243,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f63ab8e7055d2f4daf3642184ba8243,
         type: 3}
@@ -414,7 +414,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1f63ab8e7055d2f4daf3642184ba8243,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f63ab8e7055d2f4daf3642184ba8243,
         type: 3}
@@ -429,7 +429,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1f63ab8e7055d2f4daf3642184ba8243,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f63ab8e7055d2f4daf3642184ba8243,
         type: 3}
@@ -450,9 +450,9 @@ PrefabInstance:
     - {fileID: 5866666021909216657, guid: 1f63ab8e7055d2f4daf3642184ba8243, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -1070350730909333850, guid: 1f63ab8e7055d2f4daf3642184ba8243,
+    - targetCorrespondingSourceObject: {fileID: 1330755669629619180, guid: 1f63ab8e7055d2f4daf3642184ba8243,
         type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 355800681829611130}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f63ab8e7055d2f4daf3642184ba8243, type: 3}
@@ -462,9 +462,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2493200233105455609}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6033972244252344159 stripped
+--- !u!4 &3525873601481257493 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -1070350730909333850, guid: 1f63ab8e7055d2f4daf3642184ba8243,
+  m_CorrespondingSourceObject: {fileID: 1330755669629619180, guid: 1f63ab8e7055d2f4daf3642184ba8243,
     type: 3}
   m_PrefabInstance: {fileID: 2493200233105455609}
   m_PrefabAsset: {fileID: 0}
