@@ -1,6 +1,4 @@
 ﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rock : MonoBehaviour, IInteractable
@@ -52,7 +50,7 @@ public class Rock : MonoBehaviour, IInteractable
         AudioSourceManager.Instance._sounds[6].Play();
 
 
-        Vector3 direction = (_birdTarget.position - _bird.transform.position).normalized;
+        Vector3 direction = Vector3.zero;
 
 
         if (direction != Vector3.zero)
