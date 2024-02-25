@@ -5,13 +5,14 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     [SerializeField] int damage;
-    [SerializeField] int speed;
+    [SerializeField] float speed;
     private void Start()
     {
         Destroy(gameObject,5f);
     }
     void Update()
     {
+        speed += Time.deltaTime*30f;
         transform.Translate(Vector3.forward*Time.deltaTime*speed, Space.Self);
     }
     private void OnTriggerEnter(Collider other)

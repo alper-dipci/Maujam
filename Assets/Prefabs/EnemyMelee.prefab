@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4851406474232137424}
   - component: {fileID: 2888825044626468350}
   - component: {fileID: 8450043960604011553}
-  - component: {fileID: 6439788909180608040}
+  - component: {fileID: 8807144857670795667}
   m_Layer: 7
   m_Name: EnemyMelee
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2241795639129033916}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4851406474232137424
 CapsuleCollider:
@@ -95,17 +95,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGameobject: {fileID: 1465822641125201414}
   isTriggered: 0
-  animator: {fileID: 6439788909180608040}
-  health: 30
+  animator: {fileID: 8807144857670795667}
+  health: 1
   timeBetweenHits: 4
-  HitRange: 4
+  HitRange: 5
   detectRange: 20
   unDetectRange: 40
   randomCircleArea: 6
   timeBetweenPatrols: 2
   Sword: {fileID: 4077044353130150657}
   animtime: 0.6
---- !u!95 &6439788909180608040
+--- !u!95 &8807144857670795667
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -208,6 +208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 643316727326429084, guid: 9b0f5ed9af5be2b40ac336cea16bdf34,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -49.5
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b0f5ed9af5be2b40ac336cea16bdf34,
         type: 3}
