@@ -7776,9 +7776,10 @@ GameObject:
   - component: {fileID: 6594802930320581700}
   - component: {fileID: 7585782121221169350}
   - component: {fileID: 4687642852126358946}
+  - component: {fileID: 7585782121221169351}
   m_Layer: 0
   m_Name: Merdiven2
-  m_TagString: Untagged
+  m_TagString: rope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8522,6 +8523,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663480536103769094}
   m_Mesh: {fileID: -1302296242415122319, guid: 646bed99d71a80d479bda5ee65d6716b, type: 3}
+--- !u!65 &7585782121221169351
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663480536103769094}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.037756726, y: 1.3993616, z: 0.029830508}
+  m_Center: {x: -0.0000025993209, y: 0.65128326, z: 0.0000000032596288}
 --- !u!33 &7599064810085028085
 MeshFilter:
   m_ObjectHideFlags: 0
