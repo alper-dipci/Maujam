@@ -147,16 +147,16 @@ public class Player : MonoBehaviour
 
         if (health <= 100)
         {
-            //_hearts[0].SetActive(false);
+            _hearts[0].SetActive(false);
         }
         if (health <= 50)
         {
-            //_hearts[1].SetActive(false);
+            _hearts[1].SetActive(false);
         }
         if (health <= 0)
         {
-            //_hearts[2].SetActive(false);
-            Debug.Log("ÖLDÜN");
+            _hearts[2].SetActive(false);
+            die();
         }
 
 

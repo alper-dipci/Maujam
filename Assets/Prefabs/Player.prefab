@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3031741497610043201
 MeshFilter:
@@ -120,4 +120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96017d8fea8491489fbb9d55d95c9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
+  CMVCam: {fileID: 0}
+  EnemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  shakeMagnitude: 0
+  _levelManager: {fileID: 0}
+  _hearts: []
+  _skill1: 0
+  _skill2: 0
+  _skill3: 0

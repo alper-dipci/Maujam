@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2241795639129033916}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4851406474232137424
 CapsuleCollider:
@@ -96,7 +96,7 @@ MonoBehaviour:
   playerGameobject: {fileID: 1465822641125201414}
   isTriggered: 0
   animator: {fileID: 8807144857670795667}
-  health: 1
+  health: 30
   timeBetweenHits: 4
   HitRange: 5
   detectRange: 20
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba58fe305ac5ce4db9e1c1914964627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
 --- !u!65 &4412637053103338172
 BoxCollider:
   m_ObjectHideFlags: 0
