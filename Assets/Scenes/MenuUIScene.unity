@@ -351,7 +351,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: AlperScene
+          m_StringArgument: IntroStoryScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &338835474
@@ -13853,6 +13853,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   shakeMagnitude: 0.7
+  _hearts: []
   _skill1: 0
   _skill2: 0
   _skill3: 0
